@@ -8,20 +8,28 @@
     <meta property="og:title" content="Dev Praful Ganatra — Technical Product Owner" />
     <meta property="og:description" content="Product ownership grounded in embedded engineering, systems thinking, and delivery." />
     <title>Dev Praful Ganatra — Technical Product Owner</title>
+    <link rel="alternate" hreflang="en" href="https://devganatra.github.io/?lang=en" />
+    <link rel="alternate" hreflang="de" href="https://devganatra.github.io/?lang=de" />
+    <link rel="alternate" hreflang="x-default" href="https://devganatra.github.io/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=8" />
+    <link rel="stylesheet" href="styles.css?v=10" />
   </head>
   <body>
     <header class="topbar">
       <a class="wordmark" href="#top" aria-label="Dev Ganatra home"><span>DEV</span><span>GANATRA</span></a>
       <nav aria-label="Main navigation">
-        <a href="#approach">Approach</a>
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
+        <a href="#approach" data-i18n="nav.approach">Approach</a>
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
       </nav>
-      <a class="topbar-email" href="mailto:ganatra.dev@gmail.com">Let’s talk <span>↗</span></a>
+      <div class="topbar-actions">
+        <div class="language-switch" role="group" aria-label="Language selection">
+          <button type="button" data-language="en" aria-pressed="true">EN</button><span>/</span><button type="button" data-language="de" aria-pressed="false">DE</button>
+        </div>
+        <a class="topbar-email" href="mailto:ganatra.dev@gmail.com"><span data-i18n="nav.contact">Let’s talk</span> <span>↗</span></a>
+      </div>
     </header>
 
     <main id="top">
@@ -29,28 +37,28 @@
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="shell hero-inner">
           <div class="hero-status reveal">
-            <span><i></i> Technical Product Owner</span>
-            <span>Cologne, Germany</span>
+            <span><i></i> <span data-i18n="hero.role">Technical Product Owner</span></span>
+            <span data-i18n="hero.location">Cologne, Germany</span>
           </div>
 
           <div class="hero-title reveal">
-            <span class="hero-index">01 / PROFILE</span>
-            <h1>Technical product ownership,<br /><em>grounded in engineering.</em></h1>
+            <span class="hero-index" data-i18n="hero.index">01 / PROFILE</span>
+            <h1 data-i18n-html="hero.title">Technical product ownership,<br /><em>grounded in engineering.</em></h1>
           </div>
 
           <div class="hero-lower reveal">
-            <p>I connect product direction, stakeholder needs, and embedded engineering to help complex systems become clear, prioritized, and deliverable.</p>
+            <p data-i18n="hero.intro">I connect product direction, stakeholder needs, and embedded engineering to help complex systems become clear, prioritized, and deliverable.</p>
             <div class="current-card">
-              <div class="current-card-top"><span>CURRENT</span><span>2022 — NOW</span></div>
+              <div class="current-card-top"><span data-i18n="common.current">CURRENT</span><span data-i18n="common.since">2022 — NOW</span></div>
               <h2>Technical Product Owner</h2>
               <p>Innovation HW/SW Specialist</p>
-              <div><strong>Vaillant Group</strong><span>Remscheid, Germany</span></div>
+              <div><strong>Vaillant Group</strong><span data-i18n="common.remscheid">Remscheid, Germany</span></div>
             </div>
           </div>
 
           <div class="hero-footer reveal">
-            <span>PRODUCT DIRECTION</span><i></i><span>EMBEDDED SYSTEMS</span><i></i><span>TECHNICAL DELIVERY</span>
-            <a href="#approach">Scroll to explore ↓</a>
+            <span data-i18n="hero.pillar1">PRODUCT DIRECTION</span><i></i><span data-i18n="hero.pillar2">EMBEDDED SYSTEMS</span><i></i><span data-i18n="hero.pillar3">TECHNICAL DELIVERY</span>
+            <a href="#approach" data-i18n="hero.scroll">Scroll to explore ↓</a>
           </div>
         </div>
       </section>
@@ -58,32 +66,32 @@
       <section class="approach shell" id="approach">
         <div class="section-intro reveal">
           <span class="section-number">02</span>
-          <span class="kicker">How I work</span>
-          <h2>I make complex technical products easier to <em>understand, prioritize, and deliver.</em></h2>
-          <p>My engineering background helps me engage deeply with the system. Product ownership helps me turn that understanding into focus and forward motion.</p>
+          <span class="kicker" data-i18n="approach.kicker">How I work</span>
+          <h2 data-i18n-html="approach.title">I make complex technical products easier to <em>understand, prioritize, and deliver.</em></h2>
+          <p data-i18n="approach.intro">My engineering background helps me engage deeply with the system. Product ownership helps me turn that understanding into focus and forward motion.</p>
         </div>
 
         <div class="operating-model">
           <article class="model-step reveal">
             <span>01</span>
             <div class="model-icon direction-icon" aria-hidden="true"><i></i><i></i><b></b></div>
-            <h3>Direction</h3>
-            <p>Frame the problem, clarify outcomes, and make the technical and product intent visible.</p>
-            <ul><li>Product direction</li><li>Problem framing</li><li>System context</li></ul>
+            <h3 data-i18n="approach.direction.title">Direction</h3>
+            <p data-i18n="approach.direction.text">Frame the problem, clarify outcomes, and make the technical and product intent visible.</p>
+            <ul><li data-i18n="approach.direction.item1">Product direction</li><li data-i18n="approach.direction.item2">Problem framing</li><li data-i18n="approach.direction.item3">System context</li></ul>
           </article>
           <article class="model-step reveal">
             <span>02</span>
             <div class="model-icon alignment-icon" aria-hidden="true"><i></i><i></i><i></i></div>
-            <h3>Alignment</h3>
-            <p>Connect stakeholders and engineering around shared priorities, constraints, and trade-offs.</p>
-            <ul><li>Stakeholder alignment</li><li>Backlog clarity</li><li>Decision support</li></ul>
+            <h3 data-i18n="approach.alignment.title">Alignment</h3>
+            <p data-i18n="approach.alignment.text">Connect stakeholders and engineering around shared priorities, constraints, and trade-offs.</p>
+            <ul><li data-i18n="approach.alignment.item1">Stakeholder alignment</li><li data-i18n="approach.alignment.item2">Backlog clarity</li><li data-i18n="approach.alignment.item3">Decision support</li></ul>
           </article>
           <article class="model-step reveal">
             <span>03</span>
             <div class="model-icon delivery-icon" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
-            <h3>Delivery</h3>
-            <p>Create a practical path from priority to increment, with feedback and quality built in.</p>
-            <ul><li>Agile delivery</li><li>Iteration planning</li><li>Continuous learning</li></ul>
+            <h3 data-i18n="approach.delivery.title">Delivery</h3>
+            <p data-i18n="approach.delivery.text">Create a practical path from priority to increment, with feedback and quality built in.</p>
+            <ul><li data-i18n="approach.delivery.item1">Agile delivery</li><li data-i18n="approach.delivery.item2">Iteration planning</li><li data-i18n="approach.delivery.item3">Continuous learning</li></ul>
           </article>
         </div>
       </section>
@@ -91,28 +99,28 @@
       <section class="work" id="work">
         <div class="shell">
           <div class="work-heading reveal">
-            <div><span class="section-number">03</span><span class="kicker">Selected work</span></div>
-            <h2>Built through product thinking and technical depth.</h2>
+            <div><span class="section-number">03</span><span class="kicker" data-i18n="work.kicker">Selected work</span></div>
+            <h2 data-i18n="work.title">Built through product thinking and technical depth.</h2>
           </div>
 
           <div class="work-grid">
             <article class="work-card work-card-primary reveal">
-              <div class="work-card-meta"><span>VAILLANT GROUP</span><span>CURRENT</span></div>
+              <div class="work-card-meta"><span>VAILLANT GROUP</span><span data-i18n="common.current">CURRENT</span></div>
               <div class="work-card-content">
-                <span>PRODUCT OWNERSHIP / EMBEDDED SYSTEMS</span>
-                <h3>Connected climate products</h3>
-                <p>Technical product ownership within Innovation HW/SW—connecting needs, priorities, system constraints, engineering work, and iterative delivery.</p>
+                <span data-i18n="work.vaillant.label">PRODUCT OWNERSHIP / EMBEDDED SYSTEMS</span>
+                <h3 data-i18n="work.vaillant.title">Connected climate products</h3>
+                <p data-i18n="work.vaillant.text">Technical product ownership within Innovation HW/SW—connecting needs, priorities, system constraints, engineering work, and iterative delivery.</p>
               </div>
-              <div class="work-card-tags"><span>Product ownership</span><span>Embedded systems</span><span>Agile / SAFe</span><span>Delivery</span></div>
+              <div class="work-card-tags"><span data-i18n="tags.product">Product ownership</span><span data-i18n="tags.embedded">Embedded systems</span><span>Agile / SAFe</span><span data-i18n="tags.delivery">Delivery</span></div>
               <div class="primary-visual" aria-hidden="true"><span></span><i></i><i></i><i></i></div>
             </article>
 
             <article class="work-card work-card-dark reveal">
               <div class="work-card-meta"><span>BERTRANDT</span><span>2019 — 2021</span></div>
               <div class="work-card-content">
-                <span>ENGINEERING TOOLS / AUTOMOTIVE</span>
-                <h3>Embedded software made easier to inspect and ship.</h3>
-                <p>AUTOSAR applications, diagnostic and flashing tools, Qt interfaces, validation, and automated workflows for industrial programs.</p>
+                <span data-i18n="work.bertrandt.label">ENGINEERING TOOLS / AUTOMOTIVE</span>
+                <h3 data-i18n="work.bertrandt.title">Embedded software made easier to inspect and ship.</h3>
+                <p data-i18n="work.bertrandt.text">AUTOSAR applications, diagnostic and flashing tools, Qt interfaces, validation, and automated workflows for industrial programs.</p>
               </div>
               <div class="work-card-tags"><span>AUTOSAR</span><span>Qt / C++</span><span>CAN</span><span>Python</span></div>
             </article>
@@ -121,11 +129,11 @@
               <div class="work-card-meta"><span>UNIVERSITY OF FREIBURG</span><span>2016 — 2018</span></div>
               <div class="research-signal" aria-hidden="true"><svg viewBox="0 0 500 150"><path d="M0 98 C35 98 42 93 65 93 C87 93 89 25 118 25 C147 25 148 128 180 128 C212 128 214 63 247 63 C280 63 281 100 315 100 C350 100 356 94 390 94 C425 94 440 74 500 74" /></svg></div>
               <div class="work-card-content">
-                <span>APPLIED RESEARCH / SENSING</span>
-                <h3>New sensing methods for neural implants.</h3>
-                <p>Electrochemical protocols, experimental systems, and data workflows contributing to published sensor research.</p>
+                <span data-i18n="work.research.label">APPLIED RESEARCH / SENSING</span>
+                <h3 data-i18n="work.research.title">New sensing methods for neural implants.</h3>
+                <p data-i18n="work.research.text">Electrochemical protocols, experimental systems, and data workflows contributing to published sensor research.</p>
               </div>
-              <div class="work-card-tags"><span>Electrochemistry</span><span>Data acquisition</span><span>Research</span></div>
+              <div class="work-card-tags"><span data-i18n="tags.electrochemistry">Electrochemistry</span><span data-i18n="tags.data">Data acquisition</span><span data-i18n="tags.research">Research</span></div>
             </article>
           </div>
         </div>
@@ -134,26 +142,26 @@
       <section class="github shell">
         <div class="github-heading reveal">
           <div><span class="section-number">04</span><span class="kicker">GitHub</span></div>
-          <div><h2>Code, tools, and experiments.</h2><p>The latest public repositories are loaded directly from my GitHub profile.</p></div>
-          <a href="https://github.com/devganatra?tab=repositories" target="_blank" rel="noreferrer">View all repositories ↗</a>
+          <div><h2 data-i18n="github.title">Code, tools, and experiments.</h2><p data-i18n="github.intro">The latest public repositories are loaded directly from my GitHub profile.</p></div>
+          <a href="https://github.com/devganatra?tab=repositories" target="_blank" rel="noreferrer" data-i18n="github.all">View all repositories ↗</a>
         </div>
-        <div class="repo-list" id="repo-list" aria-live="polite"><p class="repo-message">Loading public repositories…</p></div>
+        <div class="repo-list" id="repo-list" aria-live="polite"><p class="repo-message" data-i18n="github.loading">Loading public repositories…</p></div>
       </section>
 
       <section class="capabilities">
         <div class="shell capabilities-layout">
           <div class="capabilities-heading reveal">
             <span class="section-number">05</span>
-            <span class="kicker">Capability map</span>
-            <h2>Product range.<br />Engineering depth.</h2>
-            <p>I work across the conversations that shape a product—from priorities and stakeholders to models, code, integration, and quality.</p>
+            <span class="kicker" data-i18n="capabilities.kicker">Capability map</span>
+            <h2 data-i18n-html="capabilities.title">Product range.<br />Engineering depth.</h2>
+            <p data-i18n="capabilities.intro">I work across the conversations that shape a product—from priorities and stakeholders to models, code, integration, and quality.</p>
           </div>
 
           <div class="capability-table reveal">
-            <article><span>PRODUCT</span><h3>Technical product ownership</h3><div><i>Direction</i><i>Priorities</i><i>Stakeholders</i><i>Agile / SAFe</i></div></article>
-            <article><span>SYSTEMS</span><h3>Embedded architecture</h3><div><i>Embedded C / C++</i><i>Microcontrollers</i><i>CAN</i><i>AUTOSAR</i></div></article>
-            <article><span>MODELS</span><h3>Model-based engineering</h3><div><i>MATLAB / Simulink</i><i>Control systems</i><i>System identification</i><i>Validation</i></div></article>
-            <article><span>ENABLEMENT</span><h3>Engineering tools & automation</h3><div><i>Python</i><i>C# / .NET</i><i>Qt</i><i>Jenkins / CI</i></div></article>
+            <article><span data-i18n="capabilities.product.label">PRODUCT</span><h3 data-i18n="capabilities.product.title">Technical product ownership</h3><div><i data-i18n="capabilities.product.item1">Direction</i><i data-i18n="capabilities.product.item2">Priorities</i><i data-i18n="capabilities.product.item3">Stakeholders</i><i>Agile / SAFe</i></div></article>
+            <article><span data-i18n="capabilities.systems.label">SYSTEMS</span><h3 data-i18n="capabilities.systems.title">Embedded architecture</h3><div><i>Embedded C / C++</i><i data-i18n="capabilities.systems.item2">Microcontrollers</i><i>CAN</i><i>AUTOSAR</i></div></article>
+            <article><span data-i18n="capabilities.models.label">MODELS</span><h3 data-i18n="capabilities.models.title">Model-based engineering</h3><div><i>MATLAB / Simulink</i><i data-i18n="capabilities.models.item2">Control systems</i><i data-i18n="capabilities.models.item3">System identification</i><i data-i18n="capabilities.models.item4">Validation</i></div></article>
+            <article><span data-i18n="capabilities.enablement.label">ENABLEMENT</span><h3 data-i18n="capabilities.enablement.title">Engineering tools & automation</h3><div><i>Python</i><i>C# / .NET</i><i>Qt</i><i>Jenkins / CI</i></div></article>
           </div>
         </div>
       </section>
@@ -161,40 +169,40 @@
       <section class="experience shell" id="experience">
         <div class="experience-heading reveal">
           <span class="section-number">06</span>
-          <span class="kicker">Experience</span>
-          <h2>A career built from the system outward.</h2>
+          <span class="kicker" data-i18n="experience.kicker">Experience</span>
+          <h2 data-i18n="experience.title">A career built from the system outward.</h2>
         </div>
 
         <div class="experience-layout">
-          <div class="experience-years reveal" aria-hidden="true"><span>2015</span><i></i><span>NOW</span></div>
+          <div class="experience-years reveal" aria-hidden="true"><span>2015</span><i></i><span data-i18n="common.now">NOW</span></div>
           <div class="timeline reveal">
-            <article><time>CURRENT</time><div><h3>Technical Product Owner</h3><p>Vaillant Group · Remscheid</p><small>Current assignment within the Innovation HW/SW Specialist role, connecting product priorities and embedded engineering delivery.</small></div></article>
-            <article><time>2022 — NOW</time><div><h3>Innovation HW/SW Specialist</h3><p>Vaillant Group · Remscheid</p><small>Embedded and model-based development, software integration, CI, and engineering-tool development.</small></div></article>
-            <article><time>2019 — 2021</time><div><h3>Embedded Software Development Engineer</h3><p>Bertrandt Ingenieurbüro · Cologne</p><small>Embedded and model-based software for Vaillant Group, StreetScooter, and Inalfa Roof Systems.</small></div></article>
-            <article><time>2018</time><div><h3>Research Associate</h3><p>University of Freiburg · IMTEK</p><small>Electrochemical sensing protocols, experimental design, and evaluation.</small></div></article>
-            <article><time>2016 — 2018</time><div><h3>Research Assistant</h3><p>University of Freiburg · IMTEK</p><small>Laboratory systems, corrosion analysis, infrared sensing, and data acquisition.</small></div></article>
-            <article><time>2015 — 2016</time><div><h3>Teaching Tutor</h3><p>Albert Ludwig University of Freiburg</p><small>Led practical flow-sensor laboratory sessions.</small></div></article>
+            <article><time data-i18n="common.current">CURRENT</time><div><h3>Technical Product Owner</h3><p>Vaillant Group · Remscheid</p><small data-i18n="experience.current.text">Current assignment within the Innovation HW/SW Specialist role, connecting product priorities and embedded engineering delivery.</small></div></article>
+            <article><time data-i18n="common.since">2022 — NOW</time><div><h3>Innovation HW/SW Specialist</h3><p>Vaillant Group · Remscheid</p><small data-i18n="experience.vaillant.text">Embedded and model-based development, software integration, CI, and engineering-tool development.</small></div></article>
+            <article><time>2019 — 2021</time><div><h3 data-i18n="experience.bertrandt.role">Embedded Software Development Engineer</h3><p data-i18n="experience.bertrandt.company">Bertrandt Ingenieurbüro · Cologne</p><small data-i18n="experience.bertrandt.text">Embedded and model-based software for Vaillant Group, StreetScooter, and Inalfa Roof Systems.</small></div></article>
+            <article><time>2018</time><div><h3 data-i18n="experience.research.role">Research Associate</h3><p data-i18n="experience.freiburg">University of Freiburg · IMTEK</p><small data-i18n="experience.research.text">Electrochemical sensing protocols, experimental design, and evaluation.</small></div></article>
+            <article><time>2016 — 2018</time><div><h3 data-i18n="experience.assistant.role">Research Assistant</h3><p data-i18n="experience.freiburg">University of Freiburg · IMTEK</p><small data-i18n="experience.assistant.text">Laboratory systems, corrosion analysis, infrared sensing, and data acquisition.</small></div></article>
+            <article><time>2015 — 2016</time><div><h3 data-i18n="experience.tutor.role">Teaching Tutor</h3><p data-i18n="experience.university">Albert Ludwig University of Freiburg</p><small data-i18n="experience.tutor.text">Led practical flow-sensor laboratory sessions.</small></div></article>
           </div>
         </div>
 
         <div class="education reveal">
-          <div class="education-heading"><span class="kicker">Education & credentials</span><h2>Technical foundations.</h2></div>
-          <article><time>2013 — 2018</time><h3>M.Sc. Embedded Systems Engineering</h3><p>Albert Ludwig University of Freiburg</p><small>GPA 1.8 · Control, estimation, modelling, system identification, biosensors, and machine learning.</small></article>
-          <article><time>2008 — 2012</time><h3>B.E. Electronics Engineering</h3><p>RTM Nagpur University</p><small>Electronics, embedded systems, and C/C++ programming.</small></article>
-          <article><time>2025</time><h3>SAFe® Hardware Agilist</h3><p>Scaled Agile</p><small>Certified SAFe 6 Hardware Agilist and Design Thinking Fundamentals.</small></article>
+          <div class="education-heading"><span class="kicker" data-i18n="education.kicker">Education & credentials</span><h2 data-i18n="education.title">Technical foundations.</h2></div>
+          <article><time>2013 — 2018</time><h3>M.Sc. Embedded Systems Engineering</h3><p data-i18n="experience.university">Albert Ludwig University of Freiburg</p><small data-i18n="education.masters.text">GPA 1.8 · Control, estimation, modelling, system identification, biosensors, and machine learning.</small></article>
+          <article><time>2008 — 2012</time><h3 data-i18n="education.bachelor.title">B.E. Electronics Engineering</h3><p>RTM Nagpur University</p><small data-i18n="education.bachelor.text">Electronics, embedded systems, and C/C++ programming.</small></article>
+          <article><time>2025</time><h3>SAFe® Hardware Agilist</h3><p>Scaled Agile</p><small data-i18n="education.safe.text">Certified SAFe 6 Hardware Agilist and Design Thinking Fundamentals.</small></article>
         </div>
       </section>
 
       <section class="contact">
         <div class="shell contact-layout">
           <div class="contact-copy reveal">
-            <span>07 / CONTACT</span>
-            <h2>Have a complex product problem?</h2>
-            <p>Let’s make the system visible, align on what matters, and create a path forward.</p>
+            <span data-i18n="contact.index">07 / CONTACT</span>
+            <h2 data-i18n="contact.title">Have a complex product problem?</h2>
+            <p data-i18n="contact.intro">Let’s make the system visible, align on what matters, and create a path forward.</p>
           </div>
           <a class="contact-email reveal" href="mailto:ganatra.dev@gmail.com"><span>ganatra.dev@gmail.com</span><b>↗</b></a>
           <div class="contact-footer reveal">
-            <span>Cologne, Germany</span>
+            <span data-i18n="hero.location">Cologne, Germany</span>
             <div><a href="https://www.linkedin.com/in/devganatra" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/devganatra" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://dev.to/devganatra" target="_blank" rel="noreferrer">DEV ↗</a></div>
             <span>© <span id="year"></span> Dev Praful Ganatra</span>
           </div>
@@ -202,6 +210,7 @@
       </section>
     </main>
 
-    <script src="script.js?v=9"></script>
+    <script src="i18n.js?v=10"></script>
+    <script src="script.js?v=10"></script>
   </body>
 </html>

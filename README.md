@@ -4,6 +4,8 @@ A responsive, single-page product and engineering portfolio for Dev Praful Ganat
 
 The repository list loads the latest public, non-forked projects directly from the GitHub API without browser caching, so new and renamed work appears automatically.
 
+The interface supports English and German, automatically follows the visitor's browser language, and includes a persistent manual language switch.
+
 ## Preview locally
 
 ```bash

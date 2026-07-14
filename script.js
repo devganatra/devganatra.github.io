@@ -33,9 +33,12 @@ const escapeHtml = (value = "") =>
     '"': "&quot;",
   })[character]);
 
+const translateUi = (key) => window.portfolioI18n?.translate(key, window.portfolioI18n.language);
+
 const renderRepositories = async () => {
   const list = document.querySelector("#repo-list");
   if (!list) return;
+  list.innerHTML = `<p class="repo-message">${escapeHtml(translateUi("github.loading") || "Loading public repositories…")}</p>`;
 
   try {
     const response = await fetch("https://api.github.com/users/devganatra/repos?sort=updated&per_page=12", {
@@ -52,7 +55,7 @@ const renderRepositories = async () => {
     list.innerHTML = repositories.map((repository, index) => {
       const language = repository.language || "Project";
       const color = languageColors[language] || "#315df4";
-      const description = repository.description || "Explore the source and project details on GitHub.";
+      const description = repository.description || translateUi("github.repoFallback") || "Explore the source and project details on GitHub.";
       return `
         <a class="repo-row" href="${escapeHtml(repository.html_url)}" target="_blank" rel="noreferrer">
           <span>${String(index + 1).padStart(2, "0")}</span>
@@ -63,8 +66,10 @@ const renderRepositories = async () => {
         </a>`;
     }).join("");
   } catch (error) {
-    list.innerHTML = '<p class="repo-message">Repositories are temporarily unavailable. <a href="https://github.com/devganatra?tab=repositories">View them on GitHub ↗</a></p>';
+    const message = translateUi("github.error") || "Repositories are temporarily unavailable. View them on GitHub ↗";
+    list.innerHTML = `<p class="repo-message"><a href="https://github.com/devganatra?tab=repositories">${escapeHtml(message)}</a></p>`;
   }
 };
 
 renderRepositories();
+window.addEventListener("portfolio-language-change", renderRepositories);
