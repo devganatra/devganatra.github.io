@@ -58,6 +58,21 @@ const translations = {
     "github.loading": "Öffentliche Repositories werden geladen…",
     "github.repoFallback": "Quellcode und Projektdetails auf GitHub ansehen.",
     "github.error": "Repositories sind momentan nicht verfügbar. Auf GitHub ansehen ↗",
+    "github.search": "Projekte durchsuchen",
+    "github.searchPlaceholder": "Name, Sprache, Thema…",
+    "github.filter.all": "Alle",
+    "github.filter.product": "Produkt",
+    "github.filter.embedded": "Embedded",
+    "github.filter.tools": "Tools",
+    "github.filter.research": "Forschung",
+    "github.sort": "Sortieren",
+    "github.sort.updated": "Zuletzt aktualisiert",
+    "github.sort.name": "Name",
+    "github.sort.stars": "Stars",
+    "github.empty": "Keine Projekte passen zu dieser Auswahl.",
+    "case.open": "Case Study ansehen ↗",
+    "resume.en": "Résumé · Englisch ↓",
+    "resume.de": "Lebenslauf · Deutsch ↓",
     "capabilities.kicker": "Kompetenzprofil",
     "capabilities.title": "Produktbreite.<br />Technische Tiefe.",
     "capabilities.intro": "Ich arbeite in den Gesprächen, die ein Produkt formen – von Prioritäten und Stakeholdern bis zu Modellen, Code, Integration und Qualität.",
@@ -76,6 +91,17 @@ const translations = {
     "capabilities.models.item4": "Validierung",
     "capabilities.enablement.label": "BEFÄHIGUNG",
     "capabilities.enablement.title": "Engineering-Tools & Automatisierung",
+    "capabilities.evidence": "Nachweise anzeigen ↘",
+    "insights.kicker": "Arbeitsnotizen",
+    "insights.title": "Gedanken an der Schnittstelle von Produkt und Engineering.",
+    "insights.intro": "Kurze, praktische Perspektiven auf die Entwicklung komplexer technischer Produkte.",
+    "insights.article1.title": "Product Ownership für Embedded Systems",
+    "insights.article1.summary": "Warum Hardware-Randbedingungen, Integrationspfade und Systemrisiken in Produktgespräche gehören.",
+    "insights.article2.title": "Engineering-Tiefe in Produktklarheit übersetzen",
+    "insights.article2.summary": "Ein praktischer Weg, technische Komplexität in Prioritäten und Entscheidungen zu übersetzen.",
+    "insights.article3.title": "Feedback in das Delivery-System einbauen",
+    "insights.article3.summary": "Wie Integration, Validierung und Lernschleifen späte Überraschungen reduzieren.",
+    "insights.read": "Notiz lesen ↗",
     "experience.kicker": "Berufserfahrung",
     "experience.title": "Eine Laufbahn, vom System aus gedacht.",
     "experience.current.text": "Aktuelle Aufgabe innerhalb der Rolle als Innovation HW/SW Specialist – als Verbindung zwischen Produktprioritäten und Embedded-Engineering-Umsetzung.",
@@ -97,7 +123,7 @@ const translations = {
     "education.bachelor.title": "B.E. Elektrotechnik",
     "education.bachelor.text": "Elektronik, Embedded Systems und C/C++-Programmierung.",
     "education.safe.text": "Certified SAFe 6 Hardware Agilist und Design Thinking Fundamentals.",
-    "contact.index": "07 / KONTAKT",
+    "contact.index": "08 / KONTAKT",
     "contact.title": "Ein komplexes Produktproblem?",
     "contact.intro": "Lassen Sie uns das System sichtbar machen, die entscheidenden Themen abstimmen und einen klaren Weg nach vorn schaffen.",
     "contact.success.title": "Nachricht gesendet.",
@@ -123,8 +149,10 @@ const translations = {
 
 const textNodes = [...document.querySelectorAll("[data-i18n]")];
 const htmlNodes = [...document.querySelectorAll("[data-i18n-html]")];
+const placeholderNodes = [...document.querySelectorAll("[data-i18n-placeholder]")];
 const originalText = new Map(textNodes.map((element) => [element, element.textContent]));
 const originalHtml = new Map(htmlNodes.map((element) => [element, element.innerHTML]));
+const originalPlaceholders = new Map(placeholderNodes.map((element) => [element, element.getAttribute("placeholder") || ""]));
 
 const metadata = {
   en: {
@@ -154,6 +182,11 @@ const applyLanguage = (language, persist = false) => {
   htmlNodes.forEach((element) => {
     const value = translate(element.dataset.i18nHtml, selected);
     element.innerHTML = value || originalHtml.get(element);
+  });
+
+  placeholderNodes.forEach((element) => {
+    const value = translate(element.dataset.i18nPlaceholder, selected);
+    element.setAttribute("placeholder", value || originalPlaceholders.get(element));
   });
 
   document.title = metadata[selected].title;
