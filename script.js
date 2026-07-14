@@ -38,7 +38,9 @@ const renderRepositories = async () => {
   if (!list) return;
 
   try {
-    const response = await fetch("https://api.github.com/users/devganatra/repos?sort=updated&per_page=12");
+    const response = await fetch("https://api.github.com/users/devganatra/repos?sort=updated&per_page=12", {
+      cache: "no-store",
+    });
     if (!response.ok) throw new Error("GitHub request failed");
 
     const repositories = (await response.json())
