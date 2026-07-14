@@ -76,7 +76,6 @@ window.addEventListener("portfolio-language-change", renderRepositories);
 
 const contactForm = document.querySelector("[data-contact-form]");
 const formSuccess = document.querySelector("#form-success");
-const pageLoadedAt = Date.now();
 
 if (new URLSearchParams(window.location.search).get("message") === "sent") {
   formSuccess.hidden = false;
@@ -84,7 +83,7 @@ if (new URLSearchParams(window.location.search).get("message") === "sent") {
 
 contactForm?.addEventListener("submit", (event) => {
   const honeyField = contactForm.querySelector('[name="_honey"]');
-  if (honeyField.value || Date.now() - pageLoadedAt < 3000) {
+  if (honeyField.value) {
     event.preventDefault();
     return;
   }
