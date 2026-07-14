@@ -1,6 +1,6 @@
 # devganatra.me
 
-A responsive, single-page personal portfolio for Dev Ganatra.
+A responsive, single-page product and engineering portfolio for Dev Praful Ganatra.
 
 The repository grid loads the latest public, non-forked projects directly from the GitHub API, so newly published work appears automatically.
 
