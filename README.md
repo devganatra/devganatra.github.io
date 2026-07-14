@@ -6,7 +6,7 @@ The repository list loads the latest public, non-forked projects directly from t
 
 The interface supports English and German, automatically follows the visitor's browser language, and includes a persistent manual language switch.
 
-The contact form delivers structured enquiries to Gmail through FormSubmit, with reCAPTCHA, honeypot, and content filtering enabled. The recipient address must confirm the first submission once before delivery becomes active.
+The contact form delivers structured enquiries to Gmail through Web3Forms, with hCaptcha, a honeypot, and server-side spam filtering enabled.
 
 ## Preview locally
 

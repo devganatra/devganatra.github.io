@@ -181,6 +181,9 @@ em { font-style: normal; color: var(--blue); }
 .form-field small { display: block; margin-top: 8px; color: var(--muted); font-size: 11px; }
 .form-consent { display: flex; gap: 11px; align-items: flex-start; color: var(--muted); font-size: 12px; cursor: pointer; }
 .form-consent input { width: 15px; height: 15px; margin: 2px 0 0; accent-color: var(--blue); }
+.form-captcha { min-height: 78px; }
+.form-captcha p { margin: 8px 0 0; color: #b42318; font-size: 12px; }
+.form-captcha p[hidden] { display: none; }
 .form-actions { display: flex; justify-content: space-between; align-items: center; gap: 30px; padding-top: 4px; }
 .form-actions button { display: flex; justify-content: space-between; align-items: center; gap: 55px; min-width: 260px; padding: 17px 19px; border: 0; color: var(--white); background: var(--ink); font: 500 12px var(--mono); cursor: pointer; transition: background .2s, transform .2s; }
 .form-actions button:hover { background: var(--blue); transform: translateY(-2px); }

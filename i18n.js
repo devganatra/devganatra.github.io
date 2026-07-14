@@ -114,9 +114,10 @@ const translations = {
     "contact.form.message": "Ihre Nachricht",
     "contact.form.hint": "Bitte geben Sie genügend Kontext für eine hilfreiche Antwort an.",
     "contact.form.consent": "Ich stimme zu, dass meine Angaben zur Beantwortung dieser Anfrage verwendet werden dürfen.",
+    "contact.form.captcha": "Bitte schließen Sie die Spam-Schutz-Prüfung ab.",
     "contact.form.submit": "Nachricht senden",
     "contact.form.sending": "Wird gesendet…",
-    "contact.form.protection": "Geschützt durch reCAPTCHA und automatische Spamfilterung."
+    "contact.form.protection": "Geschützt durch hCaptcha und serverseitige Spamfilterung."
   }
 };
 
@@ -165,6 +166,7 @@ const applyLanguage = (language, persist = false) => {
     "aria-label",
     selected === "de" ? "Sprachauswahl" : "Language selection"
   );
+  document.querySelector(".h-captcha")?.setAttribute("data-lang", selected);
 
   window.portfolioI18n.language = selected;
   if (persist) {

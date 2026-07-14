@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=11" />
+    <link rel="stylesheet" href="styles.css?v=13" />
   </head>
   <body>
     <header class="topbar">
@@ -206,14 +206,13 @@
             <div><strong data-i18n="contact.success.title">Message sent.</strong><p data-i18n="contact.success.text">Thank you for reaching out. I’ll reply as soon as I can.</p></div>
           </div>
 
-          <form class="contact-form reveal" action="https://formsubmit.co/ganatra.dev@gmail.com" method="POST" data-contact-form>
-            <input type="hidden" name="_subject" value="[devganatra.me] New portfolio enquiry" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value="https://devganatra.github.io/?message=sent#contact" />
-            <input type="hidden" name="_url" value="https://devganatra.github.io/#contact" />
-            <input type="hidden" name="_blacklist" value="casino, crypto investment, guest post, link building, SEO services, web traffic, paid backlink, domain authority" />
+          <form class="contact-form reveal" action="https://api.web3forms.com/submit" method="POST" data-contact-form>
+            <input type="hidden" name="access_key" value="1f763b0e-4c8f-427f-8087-fe6c22e0355c" />
+            <input type="hidden" name="subject" value="[devganatra.me] New portfolio enquiry" />
+            <input type="hidden" name="from_name" value="devganatra.me Portfolio" />
+            <input type="hidden" name="redirect" value="https://devganatra.github.io/?message=sent#contact" />
             <input type="hidden" name="Source" value="devganatra.me portfolio" />
-            <input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <input class="form-honey" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
             <div class="form-field">
               <label for="contact-name" data-i18n="contact.form.name">Your name</label>
@@ -246,9 +245,13 @@
               <input type="checkbox" name="Contact permission" value="Agreed" required />
               <span data-i18n="contact.form.consent">I agree that my details may be used to respond to this enquiry.</span>
             </label>
+            <div class="form-captcha form-field-wide">
+              <div class="h-captcha" data-captcha="true"></div>
+              <p id="captcha-error" data-i18n="contact.form.captcha" hidden>Please complete the spam-protection check.</p>
+            </div>
             <div class="form-actions form-field-wide">
               <button type="submit"><span data-i18n="contact.form.submit">Send message</span><b>↗</b></button>
-              <p data-i18n="contact.form.protection">Protected by reCAPTCHA and automated spam filtering.</p>
+              <p data-i18n="contact.form.protection">Protected by hCaptcha and server-side spam filtering.</p>
             </div>
           </form>
 
@@ -262,7 +265,8 @@
       </section>
     </main>
 
-    <script src="i18n.js?v=11"></script>
-    <script src="script.js?v=12"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script src="i18n.js?v=13"></script>
+    <script src="script.js?v=13"></script>
   </body>
 </html>

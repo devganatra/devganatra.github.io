@@ -82,14 +82,23 @@ if (new URLSearchParams(window.location.search).get("message") === "sent") {
 }
 
 contactForm?.addEventListener("submit", (event) => {
-  const honeyField = contactForm.querySelector('[name="_honey"]');
-  if (honeyField.value) {
+  const honeyField = contactForm.querySelector('[name="botcheck"]');
+  if (honeyField.checked) {
     event.preventDefault();
     return;
   }
 
-  const nextField = contactForm.querySelector('[name="_next"]');
-  nextField.value = `https://devganatra.github.io/?lang=${window.portfolioI18n.language}&message=sent#contact`;
+  const captchaResponse = contactForm.querySelector('textarea[name="h-captcha-response"]');
+  const captchaError = contactForm.querySelector("#captcha-error");
+  if (!captchaResponse?.value) {
+    event.preventDefault();
+    captchaError.hidden = false;
+    return;
+  }
+
+  captchaError.hidden = true;
+  const redirectField = contactForm.querySelector('[name="redirect"]');
+  redirectField.value = `https://devganatra.github.io/?lang=${window.portfolioI18n.language}&message=sent#contact`;
 
   const button = contactForm.querySelector('button[type="submit"]');
   button.disabled = true;
