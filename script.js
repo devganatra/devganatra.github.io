@@ -37,11 +37,11 @@ const escapeHtml = (value = "") =>
 
 const translateUi = (key) => window.portfolioI18n?.translate(key, window.portfolioI18n.language);
 
-// Theme follows the operating system until the visitor makes an explicit choice.
+// Preserve the original Beta 1 palette as the default; dark mode remains optional.
 const themeToggle = document.querySelector("[data-theme-toggle]");
-const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+const themeStorageKey = "portfolio-theme-v2";
 const getStoredTheme = () => {
-  try { return localStorage.getItem("portfolio-theme"); } catch (error) { return null; }
+  try { return localStorage.getItem(themeStorageKey); } catch (error) { return null; }
 };
 const applyTheme = (theme, persist = false) => {
   const selected = theme === "dark" ? "dark" : "light";
@@ -49,12 +49,11 @@ const applyTheme = (theme, persist = false) => {
   themeToggle?.setAttribute("aria-pressed", String(selected === "dark"));
   themeToggle?.setAttribute("title", selected === "dark" ? "Use light theme" : "Use dark theme");
   if (persist) {
-    try { localStorage.setItem("portfolio-theme", selected); } catch (error) { /* Storage may be unavailable. */ }
+    try { localStorage.setItem(themeStorageKey, selected); } catch (error) { /* Storage may be unavailable. */ }
   }
 };
-applyTheme(getStoredTheme() || (systemTheme.matches ? "dark" : "light"));
+applyTheme(getStoredTheme() || "light");
 themeToggle?.addEventListener("click", () => applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark", true));
-systemTheme.addEventListener?.("change", (event) => { if (!getStoredTheme()) applyTheme(event.matches ? "dark" : "light"); });
 
 // Scroll progress and active navigation keep the long-form page easy to orient in.
 const progressBar = document.querySelector(".reading-progress span");
