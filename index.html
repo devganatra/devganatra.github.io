@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="stylesheet" href="styles.css?v=15" />
+    <link rel="stylesheet" href="styles.css?v=16" />
   </head>
   <body>
     <header class="topbar">
@@ -27,13 +27,14 @@
         <a href="#experience" data-i18n="nav.experience">Experience</a>
       </nav>
       <div class="topbar-actions">
-        <a class="linkedin-quick" href="https://www.linkedin.com/in/devganatra" target="_blank" rel="noreferrer" aria-label="Open Dev Ganatra on LinkedIn">
-          <span class="linkedin-mark" aria-hidden="true">in</span><span class="linkedin-quick-label">LinkedIn ↗</span>
-        </a>
         <button class="theme-toggle" type="button" aria-label="Switch colour theme" data-theme-toggle><span aria-hidden="true">◐</span></button>
         <div class="language-switch" role="group" aria-label="Language selection">
           <button type="button" data-language="en" aria-pressed="true">EN</button><span>/</span><button type="button" data-language="de" aria-pressed="false">DE</button>
         </div>
+        <a class="linkedin-quick" href="https://www.linkedin.com/in/devganatra" target="_blank" rel="noreferrer" aria-label="Open Dev Ganatra on LinkedIn">
+          <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.34 3.5a1.84 1.84 0 1 1 0 3.68 1.84 1.84 0 0 1 0-3.68ZM3.75 8h3.18v10.25H3.75V8Zm5.22 0h3.05v1.4h.04c.42-.8 1.46-1.64 3-1.64 3.21 0 3.8 2.11 3.8 4.86v5.63h-3.17v-4.99c0-1.19-.02-2.72-1.66-2.72-1.66 0-1.91 1.3-1.91 2.63v5.08H8.97V8Z" /></svg>
+          <span class="linkedin-quick-label">LinkedIn</span><span class="linkedin-arrow" aria-hidden="true">↗</span>
+        </a>
         <a class="topbar-email" href="#contact"><span data-i18n="nav.contact">Let’s talk</span> <span>↓</span></a>
       </div>
     </header>
