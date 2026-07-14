@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dev Ganatra — builder, engineer, and creative problem solver. Selected projects, experiments, and ways to connect." />
+    <meta name="theme-color" content="#f4f1e9" />
+    <meta property="og:title" content="Dev Ganatra — Portfolio" />
+    <meta property="og:description" content="Selected projects, experiments, and ways to connect." />
+    <title>Dev Ganatra — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Dev Ganatra home">
+        <span>DG</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#connect">Connect</a>
+      </nav>
+      <a class="header-cta" href="mailto:devganatra1341@gmail.com">Let’s talk <span>↗</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-kicker reveal">
+          <span class="status-dot"></span>
+          Open to interesting collaborations
+        </div>
+        <h1 class="reveal">
+          I turn <em>curiosity</em><br />
+          into useful things.
+        </h1>
+        <div class="hero-bottom reveal">
+          <p>
+            I’m Dev Ganatra — a multidisciplinary builder exploring the space
+            between engineering, software, data, and thoughtful product design.
+          </p>
+          <a class="circle-link" href="#work" aria-label="Explore selected work">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="30"></circle>
+              <path d="M21 28l11 11 11-11M32 18v20"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="hero-rule"></div>
+        <div class="hero-meta reveal">
+          <span>Based in Germany</span>
+          <span class="hero-meta-center">Engineering · Software · Ideas</span>
+          <span id="local-time">Local time — --:--</span>
+        </div>
+      </section>
+
+      <section class="work section-shell" id="work">
+        <div class="section-heading reveal">
+          <div>
+            <span class="eyebrow">01 / Selected work</span>
+            <h2>A few things I’ve<br />made and explored.</h2>
+          </div>
+          <p>Experiments that turn raw information into clearer, more useful experiences.</p>
+        </div>
+
+        <div class="project-list">
+          <a class="project project-featured reveal" href="https://github.com/devganatra/Experiment_Data_extraction" target="_blank" rel="noreferrer">
+            <div class="project-visual data-visual" aria-hidden="true">
+              <div class="visual-label"><span>01</span><span>DATA / SCIENCE</span></div>
+              <svg viewBox="0 0 700 390" preserveAspectRatio="none">
+                <path class="gridline" d="M0 65H700M0 130H700M0 195H700M0 260H700M0 325H700M100 0V390M200 0V390M300 0V390M400 0V390M500 0V390M600 0V390" />
+                <path class="plot plot-one" d="M0 310 C55 275,85 295,130 240 S215 150,260 195 S345 320,400 240 S480 100,525 145 S620 280,700 80" />
+                <path class="plot plot-two" d="M0 265 C75 210,110 235,160 180 S235 90,300 150 S380 270,445 185 S535 130,585 170 S655 220,700 155" />
+              </svg>
+              <div class="data-readout"><span>RAW</span><b>→</b><span>INSIGHT</span></div>
+            </div>
+            <div class="project-info">
+              <div>
+                <span class="project-number">01</span>
+                <h3>Experiment Data<br />Extraction</h3>
+              </div>
+              <div class="project-copy">
+                <p>A practical pipeline that turns raw electrochemical experiment text files into structured data and useful plots.</p>
+                <div class="tags"><span>Python</span><span>Data</span><span>Visualization</span></div>
+              </div>
+              <span class="arrow">↗</span>
+            </div>
+          </a>
+
+          <a class="project reveal" href="https://github.com/devganatra/Sakha" target="_blank" rel="noreferrer">
+            <div class="project-visual sakha-visual" aria-hidden="true">
+              <div class="visual-label"><span>02</span><span>IOS / PRODUCT</span></div>
+              <div class="phone">
+                <div class="phone-notch"></div>
+                <span class="tiny-label">SAKHA</span>
+                <div class="orb"></div>
+                <div class="phone-lines"><i></i><i></i><i></i></div>
+                <div class="phone-pill">Continue <span>→</span></div>
+              </div>
+              <span class="orbit orbit-one"></span>
+              <span class="orbit orbit-two"></span>
+            </div>
+            <div class="project-info compact">
+              <div><span class="project-number">02</span><h3>Sakha</h3></div>
+              <div class="project-copy">
+                <p>A native Swift experiment focused on building a calm, human mobile experience.</p>
+                <div class="tags"><span>Swift</span><span>iOS</span></div>
+              </div>
+              <span class="arrow">↗</span>
+            </div>
+          </a>
+
+          <a class="project reveal" href="https://github.com/devganatra/TestGithbActions" target="_blank" rel="noreferrer">
+            <div class="project-visual actions-visual" aria-hidden="true">
+              <div class="visual-label"><span>03</span><span>DEV / AUTOMATION</span></div>
+              <div class="workflow">
+                <div class="node"><span>01</span>COMMIT</div><i></i>
+                <div class="node active"><span>02</span>BUILD</div><i></i>
+                <div class="node"><span>03</span>SHIP</div>
+              </div>
+              <div class="terminal-lines"><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="project-info compact">
+              <div><span class="project-number">03</span><h3>Actions Lab</h3></div>
+              <div class="project-copy">
+                <p>A focused sandbox for learning, testing, and understanding automated GitHub workflows.</p>
+                <div class="tags"><span>GitHub Actions</span><span>CI/CD</span></div>
+              </div>
+              <span class="arrow">↗</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="github-feed reveal" aria-labelledby="github-feed-title">
+          <div class="feed-heading">
+            <div>
+              <span class="eyebrow">More from GitHub</span>
+              <h3 id="github-feed-title">Public repositories</h3>
+            </div>
+            <a href="https://github.com/devganatra?tab=repositories" target="_blank" rel="noreferrer">View GitHub profile <span>↗</span></a>
+          </div>
+          <div class="repo-grid" id="repo-grid" aria-live="polite">
+            <p class="repo-loading">Loading repositories…</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section-shell" id="about">
+        <div class="about-number reveal">02</div>
+        <div class="about-copy">
+          <span class="eyebrow reveal">A little context</span>
+          <p class="about-lead reveal">I’m interested in the moment when a complex system becomes <em>simple enough to use.</em></p>
+          <div class="about-columns reveal">
+            <p>My work moves across software, engineering, and data. I enjoy taking messy inputs — an unfamiliar problem, a raw dataset, an early idea — and shaping them into something clear and useful.</p>
+            <p>Outside the output itself, I care about how things are made: thoughtful details, honest collaboration, and systems that remain understandable after they ship.</p>
+          </div>
+          <div class="principles reveal">
+            <div><span>01</span><strong>Think in systems</strong></div>
+            <div><span>02</span><strong>Prototype to learn</strong></div>
+            <div><span>03</span><strong>Make it legible</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="connect" id="connect">
+        <div class="section-shell connect-inner">
+          <span class="eyebrow reveal">03 / Connect</span>
+          <h2 class="reveal">Have a good problem?<br /><em>Let’s work on it.</em></h2>
+          <a class="email-link reveal" href="mailto:devganatra1341@gmail.com">
+            <span>devganatra1341@gmail.com</span><span>↗</span>
+          </a>
+          <div class="social-grid reveal">
+            <a href="https://github.com/devganatra" target="_blank" rel="noreferrer"><span>GitHub</span><small>Code & experiments</small><b>↗</b></a>
+            <a href="https://www.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><span>LinkedIn</span><small>Professional profile</small><b>↗</b></a>
+            <a href="https://dev.to/devganatra" target="_blank" rel="noreferrer"><span>DEV</span><small>Notes & writing</small><b>↗</b></a>
+            <a href="https://x.com/devganatra" target="_blank" rel="noreferrer"><span>X / Twitter</span><small>Ideas in progress</small><b>↗</b></a>
+            <a href="https://www.youtube.com/user/devganatra" target="_blank" rel="noreferrer"><span>YouTube</span><small>Videos & playlists</small><b>↗</b></a>
+            <a href="https://gravatar.com/devganatra" target="_blank" rel="noreferrer"><span>Gravatar</span><small>Profile & identity</small><b>↗</b></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> Dev Ganatra</span>
+      <span>Designed with care. Built for the web.</span>
+      <a href="#top">Back to top ↑</a>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
