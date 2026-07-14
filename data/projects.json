@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-07-14T13:25:39.002Z",
+  "repositories": [
+    {
+      "name": "Sakhya",
+      "description": null,
+      "html_url": "https://github.com/devganatra/Sakhya",
+      "homepage": null,
+      "language": "Swift",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "updated_at": "2026-07-14T09:28:24Z",
+      "fork": false
+    },
+    {
+      "name": "TestGithbActions",
+      "description": "tryGITHUBACTIONS",
+      "html_url": "https://github.com/devganatra/TestGithbActions",
+      "homepage": null,
+      "language": null,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "updated_at": "2024-06-12T20:37:53Z",
+      "fork": false
+    },
+    {
+      "name": "Experiment_Data_extraction",
+      "description": "For the electrochemical experiments, the data generated is saved in a Text file. This code helps to extract the data from the text file and generate the plots and required data.",
+      "html_url": "https://github.com/devganatra/Experiment_Data_extraction",
+      "homepage": null,
+      "language": null,
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "updated_at": "2019-02-20T20:29:36Z",
+      "fork": false
+    }
+  ]
+}
