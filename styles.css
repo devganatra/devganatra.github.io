@@ -163,6 +163,30 @@ em { font-style: normal; color: var(--blue); }
 .contact-copy > span { color: var(--lime); font: 500 10px var(--mono); }
 .contact h2 { max-width: 900px; margin: 35px 0 25px; font-size: clamp(48px, 6vw, 82px); }
 .contact-copy > p { max-width: 580px; margin: 0; color: #d4ddff; font-size: 16px; }
+.form-success { display: flex; gap: 18px; align-items: flex-start; max-width: 760px; margin-top: 58px; padding: 20px 22px; color: var(--ink); background: var(--lime); }
+.form-success[hidden] { display: none; }
+.form-success > span { font: 600 22px var(--display); }
+.form-success strong { display: block; font: 600 18px var(--display); }
+.form-success p { margin: 3px 0 0; font-size: 13px; }
+.contact-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 34px; margin-top: 72px; padding: 42px; color: var(--ink); background: var(--white); box-shadow: 0 30px 80px rgba(16,20,24,.18); }
+.form-honey { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.form-field { min-width: 0; }
+.form-field-wide { grid-column: 1 / -1; }
+.form-field label { display: block; margin-bottom: 9px; font: 500 11px var(--mono); letter-spacing: .03em; text-transform: uppercase; }
+.form-field label span { color: var(--muted); font-size: 9px; }
+.form-field input, .form-field select, .form-field textarea { width: 100%; border: 0; border-bottom: 1px solid #aeb5b0; border-radius: 0; padding: 10px 0 13px; color: var(--ink); background: transparent; font: 400 15px/1.5 var(--sans); outline: none; transition: border-color .2s, box-shadow .2s; }
+.form-field textarea { min-height: 145px; resize: vertical; }
+.form-field select { appearance: none; cursor: pointer; background-image: linear-gradient(45deg, transparent 50%, var(--ink) 50%), linear-gradient(135deg, var(--ink) 50%, transparent 50%); background-position: calc(100% - 5px) 50%, 100% 50%; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; }
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--blue); box-shadow: 0 1px 0 var(--blue); }
+.form-field small { display: block; margin-top: 8px; color: var(--muted); font-size: 11px; }
+.form-consent { display: flex; gap: 11px; align-items: flex-start; color: var(--muted); font-size: 12px; cursor: pointer; }
+.form-consent input { width: 15px; height: 15px; margin: 2px 0 0; accent-color: var(--blue); }
+.form-actions { display: flex; justify-content: space-between; align-items: center; gap: 30px; padding-top: 4px; }
+.form-actions button { display: flex; justify-content: space-between; align-items: center; gap: 55px; min-width: 260px; padding: 17px 19px; border: 0; color: var(--white); background: var(--ink); font: 500 12px var(--mono); cursor: pointer; transition: background .2s, transform .2s; }
+.form-actions button:hover { background: var(--blue); transform: translateY(-2px); }
+.form-actions button:disabled { cursor: wait; opacity: .65; transform: none; }
+.form-actions button b { color: var(--lime); font-size: 18px; font-weight: 400; }
+.form-actions p { margin: 0; color: var(--muted); font-size: 10px; }
 .contact-email { display: flex; justify-content: space-between; align-items: center; margin-top: 90px; padding: 23px 0; border-block: 1px solid rgba(255,255,255,.4); font: 500 clamp(18px, 2.5vw, 35px) var(--mono); }
 .contact-email b { color: var(--lime); font-size: 35px; font-weight: 400; }
 .contact-footer { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; margin-top: 75px; color: #c4d0ff; font: 400 10px var(--mono); }
@@ -228,6 +252,10 @@ em { font-style: normal; color: var(--blue); }
   .education h3 { min-height: 0; margin-top: 20px; }
   .contact { padding-top: 90px; }
   .contact h2 { font-size: 48px; }
+  .contact-form { grid-template-columns: 1fr; gap: 24px; margin-top: 55px; padding: 28px 22px; }
+  .form-field-wide { grid-column: auto; }
+  .form-actions { align-items: flex-start; flex-direction: column; }
+  .form-actions button { width: 100%; min-width: 0; }
   .contact-email { margin-top: 65px; font-size: 14px; }
   .contact-footer { grid-template-columns: 1fr 1fr; gap: 35px; }
   .contact-footer > div { grid-column: 1 / -1; grid-row: 1; justify-content: space-between; }

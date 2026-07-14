@@ -99,7 +99,24 @@ const translations = {
     "education.safe.text": "Certified SAFe 6 Hardware Agilist und Design Thinking Fundamentals.",
     "contact.index": "07 / KONTAKT",
     "contact.title": "Ein komplexes Produktproblem?",
-    "contact.intro": "Lassen Sie uns das System sichtbar machen, die entscheidenden Themen abstimmen und einen klaren Weg nach vorn schaffen."
+    "contact.intro": "Lassen Sie uns das System sichtbar machen, die entscheidenden Themen abstimmen und einen klaren Weg nach vorn schaffen.",
+    "contact.success.title": "Nachricht gesendet.",
+    "contact.success.text": "Vielen Dank für Ihre Nachricht. Ich melde mich so bald wie möglich.",
+    "contact.form.name": "Ihr Name",
+    "contact.form.email": "E-Mail-Adresse",
+    "contact.form.company": "Unternehmen / Organisation (optional)",
+    "contact.form.topic": "Worüber möchten Sie sprechen?",
+    "contact.form.choose": "Thema auswählen",
+    "contact.form.topic1": "Product Ownership",
+    "contact.form.topic2": "Embedded Systems",
+    "contact.form.topic3": "Zusammenarbeit im Engineering",
+    "contact.form.topic4": "Etwas anderes",
+    "contact.form.message": "Ihre Nachricht",
+    "contact.form.hint": "Bitte geben Sie genügend Kontext für eine hilfreiche Antwort an.",
+    "contact.form.consent": "Ich stimme zu, dass meine Angaben zur Beantwortung dieser Anfrage verwendet werden dürfen.",
+    "contact.form.submit": "Nachricht senden",
+    "contact.form.sending": "Wird gesendet…",
+    "contact.form.protection": "Geschützt durch reCAPTCHA und automatische Spamfilterung."
   }
 };
 

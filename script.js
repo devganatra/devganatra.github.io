@@ -73,3 +73,27 @@ const renderRepositories = async () => {
 
 renderRepositories();
 window.addEventListener("portfolio-language-change", renderRepositories);
+
+const contactForm = document.querySelector("[data-contact-form]");
+const formSuccess = document.querySelector("#form-success");
+const pageLoadedAt = Date.now();
+
+if (new URLSearchParams(window.location.search).get("message") === "sent") {
+  formSuccess.hidden = false;
+}
+
+contactForm?.addEventListener("submit", (event) => {
+  const honeyField = contactForm.querySelector('[name="_honey"]');
+  if (honeyField.value || Date.now() - pageLoadedAt < 3000) {
+    event.preventDefault();
+    return;
+  }
+
+  const nextField = contactForm.querySelector('[name="_next"]');
+  nextField.value = `https://devganatra.github.io/?lang=${window.portfolioI18n.language}&message=sent#contact`;
+
+  const button = contactForm.querySelector('button[type="submit"]');
+  button.disabled = true;
+  const label = button.querySelector("span");
+  label.textContent = translateUi("contact.form.sending") || "Sending…";
+});
