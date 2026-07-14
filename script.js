@@ -10,31 +10,19 @@ const observer = new IntersectionObserver(
   { threshold: 0.12 }
 );
 
-document.querySelectorAll(".reveal, .project").forEach((element) => observer.observe(element));
+document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 
-const timeElement = document.querySelector("#local-time");
-const updateTime = () => {
-  const time = new Intl.DateTimeFormat("en-GB", {
-    timeZone: "Europe/Berlin",
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-  }).format(new Date());
-  timeElement.textContent = `Local time — ${time}`;
-};
-
-updateTime();
-setInterval(updateTime, 30_000);
 document.querySelector("#year").textContent = new Date().getFullYear();
 
-const glow = document.querySelector(".cursor-glow");
-if (window.matchMedia("(pointer: fine)").matches) {
-  window.addEventListener("pointermove", ({ clientX, clientY }) => {
-    glow.style.left = `${clientX}px`;
-    glow.style.top = `${clientY}px`;
-    glow.style.opacity = "1";
-  });
-}
+const progressBar = document.querySelector(".progress span");
+const updateProgress = () => {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+  progressBar.style.transform = `scaleX(${progress})`;
+};
+
+window.addEventListener("scroll", updateProgress, { passive: true });
+updateProgress();
 
 const languageColors = {
   Swift: "#f05138",
