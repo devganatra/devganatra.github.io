@@ -16,14 +16,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="stylesheet" href="styles.css?v=17" />
+    <link rel="stylesheet" href="styles.css?v=22" />
   </head>
   <body>
     <header class="topbar">
       <a class="wordmark" href="#top" aria-label="Dev Ganatra home"><span>DEV</span><span>GANATRA</span></a>
       <nav aria-label="Main navigation">
-        <a href="#approach" data-i18n="nav.approach">Approach</a>
-        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#work" data-i18n="nav.work">Selected work</a>
+        <a href="#projects" data-i18n="nav.projects">Project library</a>
         <a href="#experience" data-i18n="nav.experience">Experience</a>
       </nav>
       <div class="topbar-actions">
@@ -45,7 +45,7 @@
         <div class="shell hero-inner">
           <div class="hero-status reveal">
             <span><i></i> <span data-i18n="hero.role">Technical Product Owner</span></span>
-            <span data-i18n="hero.location">Cologne, Germany</span>
+            <span data-i18n="hero.location">Based in Cologne, Germany</span>
           </div>
 
           <div class="hero-title reveal">
@@ -62,21 +62,103 @@
               </div>
             </div>
             <div class="current-card">
-              <div class="current-card-top"><span data-i18n="common.current">CURRENT</span><span data-i18n="common.since">2022 — NOW</span></div>
+              <div class="current-card-top"><span data-i18n="role.assignment">CURRENT ASSIGNMENT</span><span data-i18n="common.current">CURRENT</span></div>
               <h2>Technical Product Owner</h2>
-              <p>Innovation HW/SW Specialist</p>
-              <div><strong>Vaillant Group</strong><span data-i18n="common.remscheid">Remscheid, Germany</span></div>
+              <p data-i18n="role.productOwnerAssignment">Product-owner assignment</p>
+              <div><strong data-i18n="role.base">Innovation HW/SW Specialist · since 2022</strong><span data-i18n="common.remscheid">Remscheid, Germany</span></div>
             </div>
           </div>
 
           <div class="hero-footer reveal">
             <span data-i18n="hero.pillar1">PRODUCT DIRECTION</span><i></i><span data-i18n="hero.pillar2">EMBEDDED SYSTEMS</span><i></i><span data-i18n="hero.pillar3">TECHNICAL DELIVERY</span>
-            <a href="#approach" data-i18n="hero.scroll">Scroll to explore ↓</a>
+            <a href="#work" data-i18n="hero.scroll">See selected work ↓</a>
           </div>
         </div>
       </section>
 
-      <section class="approach shell" id="approach">
+      <section class="selected-work shell" id="work">
+        <div class="selected-heading reveal">
+          <div><span class="section-number">02</span><span class="kicker" data-i18n="selected.kicker">Selected work</span></div>
+          <h2 data-i18n-html="selected.title">Three examples of turning <em>technical depth into useful outcomes.</em></h2>
+          <p data-i18n="selected.intro">Current product leadership, published research, and an independent product—each showing a different part of how I think and deliver.</p>
+        </div>
+
+        <div class="selected-grid">
+          <article class="selected-card selected-card-primary reveal">
+            <div class="selected-card-top"><span>01 · VAILLANT GROUP</span><span data-i18n="common.current">CURRENT</span></div>
+            <div class="selected-card-copy">
+              <span data-i18n="work.vaillant.label">PRODUCT OWNERSHIP / EMBEDDED SYSTEMS</span>
+              <h3 data-i18n="work.vaillant.title">Connected climate products</h3>
+              <p data-i18n="selected.vaillant.outcome">Connecting product priorities, system constraints, and embedded engineering so teams can make clearer decisions and move toward integrated increments.</p>
+            </div>
+            <div class="selected-card-bottom"><div class="evidence-badges"><span>Product</span><span>Embedded</span><span>SAFe</span></div><button class="case-study-trigger" type="button" data-case-study="vaillant" data-i18n="case.open">View case study ↗</button></div>
+          </article>
+
+          <article class="selected-card selected-card-research reveal">
+            <div class="selected-card-top"><span>02 · UNIVERSITY OF FREIBURG</span><span>2016 — 2019</span></div>
+            <div class="selected-card-copy">
+              <span data-i18n="work.research.label">APPLIED RESEARCH / SENSING</span>
+              <h3 data-i18n="work.research.title">New sensing methods for neural implants.</h3>
+              <p data-i18n="selected.research.outcome">Designed measurement protocols and automated analysis that turned repeated electrochemical experiments into comparable evidence and contributed to peer-reviewed research.</p>
+            </div>
+            <div class="selected-card-bottom"><div class="evidence-badges"><span>MATLAB</span><span data-i18n="tags.research">Research</span><span>DOI</span></div><div class="selected-links"><button class="case-study-trigger" type="button" data-case-study="research" data-i18n="case.open">View case study ↗</button><a href="https://doi.org/10.1088/1741-2552/ab4c69" target="_blank" rel="noreferrer">DOI ↗</a></div></div>
+          </article>
+
+          <article class="selected-card selected-card-sakhya reveal">
+            <div class="selected-card-top"><span>03 · INDEPENDENT PRODUCT</span><span>ACTIVE</span></div>
+            <div class="selected-card-copy">
+              <span data-i18n="github.sakhya.type">PRODUCT DESIGN · NATIVE APP · PERSONAL SYSTEMS</span>
+              <h3>Sakhya</h3>
+              <p data-i18n="selected.sakhya.outcome">A working Swift product that brings routines, reminders, wellbeing, purchases, reading, and reflection into one private daily timeline.</p>
+            </div>
+            <div class="selected-card-bottom"><div class="evidence-badges"><span>SwiftUI</span><span>Apple Health</span><span>GitHub</span></div><a class="selected-source" href="https://github.com/devganatra/Sakhya" target="_blank" rel="noreferrer"><span data-i18n="github.source">View source</span> ↗</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="approach approach-compact" id="approach">
+        <div class="shell">
+          <div class="approach-compact-heading reveal">
+            <div><span class="section-number">03</span><span class="kicker" data-i18n="approach.kicker">How I work</span></div>
+            <h2 data-i18n-html="approach.title">I make complex technical products easier to <em>understand, prioritize, and deliver.</em></h2>
+          </div>
+          <div class="approach-compact-grid">
+            <article class="reveal"><span>01</span><h3 data-i18n="approach.direction.title">Direction</h3><p data-i18n="approach.direction.text">Frame the problem, clarify outcomes, and make the technical and product intent visible.</p></article>
+            <article class="reveal"><span>02</span><h3 data-i18n="approach.alignment.title">Alignment</h3><p data-i18n="approach.alignment.text">Connect stakeholders and engineering around shared priorities, constraints, and trade-offs.</p></article>
+            <article class="reveal"><span>03</span><h3 data-i18n="approach.delivery.title">Delivery</h3><p data-i18n="approach.delivery.text">Create a practical path from priority to increment, with feedback and quality built in.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-library shell" id="projects">
+        <div class="library-heading reveal">
+          <div><span class="section-number">04</span><span class="kicker" data-i18n="library.kicker">Project library</span></div>
+          <h2 data-i18n="library.title">A compact index of the work behind the story.</h2>
+          <p data-i18n="library.intro">Filter by context, then follow the strongest available evidence: GitHub, LinkedIn, a live product, or the published paper.</p>
+        </div>
+        <div class="project-filters reveal" role="group" aria-label="Filter projects">
+          <button type="button" class="is-active" data-project-filter="all" data-i18n="filter.all">All</button>
+          <button type="button" data-project-filter="professional" data-i18n="filter.professional">Professional</button>
+          <button type="button" data-project-filter="research" data-i18n="filter.research">Research</button>
+          <button type="button" data-project-filter="university" data-i18n="filter.university">University</button>
+          <button type="button" data-project-filter="personal" data-i18n="filter.personal">Personal</button>
+        </div>
+        <div class="library-list reveal">
+          <article data-project-category="professional"><time>2019 — 2021</time><div><span data-i18n="filter.professional">Professional</span><h3 data-i18n="library.bertrandt.title">Embedded engineering tools and automation</h3><p data-i18n="library.bertrandt.text">AUTOSAR applications, diagnostic and flashing tools, Qt interfaces, validation, and repeatable workflows for industrial programs.</p></div><strong>AUTOSAR · Qt · CAN · Python</strong><a href="https://de.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><b>LinkedIn</b> ↗</a></article>
+          <article data-project-category="research"><time>2019</time><div><span data-i18n="archive.publication.type">PEER-REVIEWED PUBLICATION</span><h3 data-i18n="archive.publication.title">New life for old wires: Electrochemical sensor method for neural implants</h3><p data-i18n="library.publication.text">Co-authored research showing how existing implant electrodes can also provide in-situ chemical sensing.</p></div><strong>Electrochemistry · Neural interfaces</strong><a href="https://doi.org/10.1088/1741-2552/ab4c69" target="_blank" rel="noreferrer"><b>DOI</b> ↗</a></article>
+          <article data-project-category="research"><time>2018</time><div><span data-i18n="archive.matlab.type">RESEARCH SOFTWARE</span><h3 data-i18n="archive.matlab.title">MATLAB application for electrochemical data analysis</h3><p data-i18n="library.matlab.text">Converted repeated measurements into protocol phases, batch plots, calibration statistics, electrode comparisons, and long-term trend views.</p></div><strong>MATLAB · Batch analysis</strong><a href="https://de.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><b>LinkedIn</b> ↗</a></article>
+          <article data-project-category="research university"><time>2017 — 2018</time><div><span data-i18n="archive.thesis.type">MASTER'S THESIS</span><h3 data-i18n="archive.thesis.title">Electrochemical Sensing and in Situ Corrosion Analysis for Neuroimplants</h3><p data-i18n="library.thesis.text">Designed measurement and stimulation protocols and evaluated surface behaviour and implant corrosion.</p></div><strong>MATLAB · Electrochemistry</strong><a href="https://doi.org/10.1088/1741-2552/ab4c69" target="_blank" rel="noreferrer"><b data-i18n="archive.thesis.paper">Related publication</b> ↗</a></article>
+          <article data-project-category="university"><time>2015</time><div><span data-i18n="archive.robot.type">CONTROL SYSTEMS</span><h3 data-i18n="archive.robot.title">Model predictive control for a robotic arm</h3><p data-i18n="archive.robot.text">Simulated optimal control for planar and 3D robotic arms, then implemented MPC using MATLAB, the ACADO Toolkit, and the Robotics Toolbox.</p></div><strong>MATLAB · ACADO · MPC</strong><a href="https://de.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><b>LinkedIn</b> ↗</a></article>
+          <article data-project-category="university"><time>2015</time><div><span data-i18n="archive.imu.type">SENSOR PARAMETERISATION</span><h3 data-i18n="archive.imu.title">Automatic IMU calibration for a carousel</h3><p data-i18n="library.imu.text">Estimated sensor offsets and alignment parameters using gravity and radial acceleration as physical references.</p></div><strong>MATLAB · MPU6050 · OROCOS</strong><a href="https://de.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><b>LinkedIn</b> ↗</a></article>
+          <article class="library-extra" data-project-category="university"><time>2014</time><div><span data-i18n="archive.vision.type">COMPUTER VISION</span><h3 data-i18n="archive.vision.title">Ellipse detection with the Hough transform</h3><p data-i18n="library.vision.text">Built a constrained five-parameter ellipse detection pipeline for noisy and incomplete camera contours.</p></div><strong>C++ · OpenCV · ROS</strong><a href="https://de.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><b>LinkedIn</b> ↗</a></article>
+          <article class="library-extra" data-project-category="university"><time>2012</time><div><span data-i18n="archive.bachelor.type">BACHELOR FINAL PROJECT</span><h3 data-i18n="archive.bachelor.title">Wireless computer-controlled surveillance robot</h3><p data-i18n="archive.bachelor.text">Designed a wireless surveillance robot around the ATmega16 microcontroller, extending earlier work on a mobile-controlled robot, an intruder alarm, and a travelling phone charger.</p></div><strong>ATmega16 · Embedded C</strong><a href="https://de.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><b>LinkedIn</b> ↗</a></article>
+          <article class="library-extra" data-project-category="personal"><time>NOW</time><div><span data-i18n="filter.personal">Personal</span><h3>Sakhya</h3><p data-i18n="github.sakhya.intent">Reduce the friction of tracking daily life across disconnected apps and categories.</p></div><strong>Swift · SwiftUI · Apple Health</strong><a href="https://github.com/devganatra/Sakhya" target="_blank" rel="noreferrer"><b>GitHub</b> ↗</a></article>
+          <article class="library-extra" data-project-category="personal"><time>NOW</time><div><span data-i18n="filter.personal">Personal</span><h3 data-i18n="github.portfolio.title">This portfolio</h3><p data-i18n="github.portfolio.intent">Make technical product experience easy to understand for both engineering and business audiences.</p></div><strong>HTML · CSS · JavaScript</strong><a href="https://github.com/devganatra/devganatra.github.io" target="_blank" rel="noreferrer"><b>GitHub</b> ↗</a></article>
+        </div>
+        <button class="library-more reveal" type="button" data-library-more aria-expanded="false"><span data-i18n="library.more">Show four more projects</span><b>↓</b></button>
+      </section>
+
+      <section class="approach shell legacy-content" id="legacy-approach" aria-hidden="true">
         <div class="section-intro reveal">
           <span class="section-number">02</span>
           <span class="kicker" data-i18n="approach.kicker">How I work</span>
@@ -109,11 +191,11 @@
         </div>
       </section>
 
-      <section class="work" id="work">
+      <section class="work legacy-content" id="legacy-work" aria-hidden="true">
         <div class="shell">
           <div class="work-heading reveal">
-            <div><span class="section-number">03</span><span class="kicker" data-i18n="work.kicker">Selected work</span></div>
-            <h2 data-i18n="work.title">Built through product thinking and technical depth.</h2>
+            <div><span class="section-number">03</span><span class="kicker" data-i18n="work.kicker">Projects</span></div>
+            <h2 data-i18n="work.title">Professional, academic, and independent projects—one continuous body of work.</h2>
           </div>
 
           <div class="work-grid">
@@ -126,7 +208,7 @@
               </div>
               <div class="work-card-tags"><span data-i18n="tags.product">Product ownership</span><span data-i18n="tags.embedded">Embedded systems</span><span>Agile / SAFe</span><span data-i18n="tags.delivery">Delivery</span></div>
               <div class="primary-visual" aria-hidden="true"><span></span><i></i><i></i><i></i></div>
-              <button class="case-study-trigger" type="button" data-case-study="vaillant" data-i18n="case.open">View case study ↗</button>
+              <div class="case-study-links"><button class="case-study-trigger" type="button" data-case-study="vaillant" data-i18n="case.open">View case study ↗</button><a href="https://de.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><span data-i18n="work.linkedin">LinkedIn context</span> ↗</a></div>
             </article>
 
             <article class="work-card work-card-dark reveal">
@@ -137,7 +219,7 @@
                 <p data-i18n="work.bertrandt.text">AUTOSAR applications, diagnostic and flashing tools, Qt interfaces, validation, and automated workflows for industrial programs.</p>
               </div>
               <div class="work-card-tags"><span>AUTOSAR</span><span>Qt / C++</span><span>CAN</span><span>Python</span></div>
-              <button class="case-study-trigger" type="button" data-case-study="bertrandt" data-i18n="case.open">View case study ↗</button>
+              <div class="case-study-links"><button class="case-study-trigger" type="button" data-case-study="bertrandt" data-i18n="case.open">View case study ↗</button><a href="https://de.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><span data-i18n="work.linkedin">LinkedIn context</span> ↗</a></div>
             </article>
 
             <article class="work-card work-card-research reveal">
@@ -149,16 +231,52 @@
                 <p data-i18n="work.research.text">Electrochemical protocols, experimental systems, and data workflows contributing to published sensor research.</p>
               </div>
               <div class="work-card-tags"><span data-i18n="tags.electrochemistry">Electrochemistry</span><span data-i18n="tags.data">Data acquisition</span><span data-i18n="tags.research">Research</span></div>
-              <button class="case-study-trigger" type="button" data-case-study="research" data-i18n="case.open">View case study ↗</button>
+              <div class="case-study-links"><button class="case-study-trigger" type="button" data-case-study="research" data-i18n="case.open">View case study ↗</button><a href="https://de.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><span data-i18n="work.linkedin">LinkedIn context</span> ↗</a></div>
             </article>
           </div>
+
+          <div class="archive-heading reveal">
+            <div><span class="archive-index" data-i18n="archive.label">PROJECT TIMELINE</span><span data-i18n="archive.range">2012 — NOW</span></div>
+            <h2 data-i18n-html="archive.title">The engineering foundation behind today’s work:<br /><em>research, controls, perception, embedded systems, and digital products.</em></h2>
+            <p data-i18n="archive.intro">Projects from university to the present, presented as one portfolio. Each available source links to GitHub, LinkedIn, a live product, or a published document.</p>
+          </div>
+
+          <div class="archive-feature-grid">
+            <article class="archive-feature archive-thesis reveal">
+              <div class="archive-feature-top"><span data-i18n="archive.thesis.type">MASTER'S THESIS</span><time>2017 — 2018</time></div>
+              <h3 data-i18n="archive.thesis.title">Electrochemical Sensing and in Situ Corrosion Analysis for Neuroimplants</h3>
+              <p data-i18n="archive.thesis.text">Designed electrochemical measurement and stimulation protocols for platinum neural-interface electrodes, analysed oxygen and hydrogen-peroxide responses, and used MATLAB to evaluate surface behaviour and implant corrosion.</p>
+              <div class="archive-tags"><span>Electrochemistry</span><span>MATLAB</span><span>Neural interfaces</span><span>Corrosion analysis</span></div>
+              <div class="archive-feature-actions"><a href="https://doi.org/10.1088/1741-2552/ab4c69" target="_blank" rel="noreferrer"><span data-i18n="archive.thesis.paper">Related publication</span><b>↗</b></a><a href="https://de.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><span data-i18n="archive.linkedin">Details on LinkedIn</span><b>↗</b></a></div>
+            </article>
+
+            <article class="archive-feature archive-publication reveal">
+              <div class="archive-feature-top"><span data-i18n="archive.publication.type">PEER-REVIEWED PUBLICATION</span><time>2019</time></div>
+              <h3 data-i18n="archive.publication.title">New life for old wires: Electrochemical sensor method for neural implants</h3>
+              <p data-i18n="archive.publication.text">Co-authored research showing how existing platinum and platinum–iridium implant electrodes can act as in-situ chemical sensors. The protocol measured the electrode environment and repeatedly restored sensitivity during in-vivo evaluation.</p>
+              <div class="archive-feature-actions"><a class="publication-link" href="https://doi.org/10.1088/1741-2552/ab4c69" target="_blank" rel="noreferrer"><span data-i18n="archive.publication.link">Read the paper</span><b>↗</b></a><a class="publication-link publication-link-secondary" href="https://de.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><span>LinkedIn</span><b>↗</b></a></div>
+            </article>
+          </div>
+
+          <div class="archive-list reveal">
+            <article><time>2018</time><div><span data-i18n="archive.matlab.type">RESEARCH SOFTWARE</span><h3 data-i18n="archive.matlab.title">MATLAB application for electrochemical data analysis</h3><p data-i18n="archive.matlab.text">Created an analysis application for thesis follow-on and early doctoral research. It turned repeated electrochemical measurements into separated protocol phases, batch plots, calibration statistics, electrode comparisons, and long-term trend views—reducing manual work across in-vitro and in-vivo datasets used in the publication.</p></div><div class="archive-meta"><strong>MATLAB · Batch analysis · Visualisation</strong><a href="https://de.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><span data-i18n="archive.linkedin">Details on LinkedIn</span> ↗</a></div></article>
+            <article><time>2015</time><div><span data-i18n="archive.robot.type">CONTROL SYSTEMS</span><h3 data-i18n="archive.robot.title">Model predictive control for a robotic arm</h3><p data-i18n="archive.robot.text">Simulated optimal control for planar and 3D robotic arms, then implemented MPC using MATLAB, the ACADO Toolkit, and the Robotics Toolbox.</p></div><div class="archive-meta"><strong>MATLAB · ACADO · MPC</strong><a href="https://de.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><span data-i18n="archive.linkedin">Details on LinkedIn</span> ↗</a></div></article>
+            <article><time>2015</time><div><span data-i18n="archive.imu.type">SENSOR PARAMETERISATION</span><h3 data-i18n="archive.imu.title">Automatic IMU calibration for a carousel</h3><p data-i18n="archive.imu.text">Developed a calibration method for the carousel's MPU6050 IMU. It estimated offsets and five alignment parameters for the three-axis gyroscope and accelerometer, reconciled sensor, carousel, and global coordinate frames, and used gravity and radial acceleration as physical references for calibrated operation after restart.</p></div><div class="archive-meta"><strong>MATLAB · MPU6050 · OROCOS / Linux</strong><a href="https://de.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><span data-i18n="archive.linkedin">Details on LinkedIn</span> ↗</a></div></article>
+            <article><time>2014</time><div><span data-i18n="archive.vision.type">COMPUTER VISION</span><h3 data-i18n="archive.vision.title">Ellipse detection with the Hough transform</h3><p data-i18n="archive.vision.text">Built an RGB-camera pipeline for a robotics target-detection task: grayscale and blur, thresholding, Canny edges, morphological masking, line-based centre estimation, and a five-parameter ellipse Hough accumulator. Min/max axis constraints, ratio checks, and circumference normalisation improved candidate scoring under noise and incomplete contours.</p></div><div class="archive-meta"><strong>C++ · OpenCV · ROS · Hough transform</strong><a href="https://de.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><span data-i18n="archive.linkedin">Details on LinkedIn</span> ↗</a></div></article>
+            <article><time>2012</time><div><span data-i18n="archive.bachelor.type">BACHELOR FINAL PROJECT</span><h3 data-i18n="archive.bachelor.title">Wireless computer-controlled surveillance robot</h3><p data-i18n="archive.bachelor.text">Designed a wireless surveillance robot around the ATmega16 microcontroller, extending earlier work on a mobile-controlled robot, an intruder alarm, and a travelling phone charger.</p></div><div class="archive-meta"><strong>ATmega16 · Embedded C · Electronics</strong><a href="https://de.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><span data-i18n="archive.profile">Academic profile</span> ↗</a></div></article>
+          </div>
+
+          <aside class="reference-note reveal">
+            <span data-i18n="archive.reference.label">INDEPENDENT REFERENCE · UNIVERSITY OF FREIBURG</span>
+            <p data-i18n="archive.reference.text">The 2018 employment reference confirms responsibility for the electrochemical sensor protocol, in-vivo measurements, automated MATLAB evaluation of long-term data, and publication work. It also highlights initiative, structured execution, reliability, resilience, and strong collaboration. The original document remains private.</p>
+          </aside>
         </div>
       </section>
 
-      <section class="github shell" id="projects">
+      <section class="github shell legacy-content" id="legacy-projects" aria-hidden="true">
         <div class="github-heading reveal">
-          <div><span class="section-number">04</span><span class="kicker" data-i18n="github.kicker">Public proof</span></div>
-          <div><h2 data-i18n="github.title">Selected builds, with context.</h2><p data-i18n="github.intro">A focused view of the projects that best show how I turn an idea into a useful, working product.</p></div>
+          <div><span class="section-number">03B</span><span class="kicker" data-i18n="github.kicker">Current independent projects</span></div>
+          <div><h2 data-i18n="github.title">Current builds, with live proof.</h2><p data-i18n="github.intro">The present-day continuation of the same project timeline, with source code and live products where they are public.</p></div>
           <a href="https://github.com/devganatra?tab=repositories" target="_blank" rel="noreferrer" data-i18n="github.all">GitHub profile ↗</a>
         </div>
 
@@ -212,40 +330,9 @@
         </div>
       </section>
 
-      <section class="capabilities">
-        <div class="shell capabilities-layout">
-          <div class="capabilities-heading reveal">
-            <span class="section-number">05</span>
-            <span class="kicker" data-i18n="capabilities.kicker">Capability map</span>
-            <h2 data-i18n-html="capabilities.title">Product range.<br />Engineering depth.</h2>
-            <p data-i18n="capabilities.intro">I work across the conversations that shape a product—from priorities and stakeholders to models, code, integration, and quality.</p>
-          </div>
-
-          <div class="capability-table reveal">
-            <article><span data-i18n="capabilities.product.label">PRODUCT</span><h3 data-i18n="capabilities.product.title">Technical product ownership</h3><div><i data-i18n="capabilities.product.item1">Direction</i><i data-i18n="capabilities.product.item2">Priorities</i><i data-i18n="capabilities.product.item3">Stakeholders</i><i>Agile / SAFe</i></div><button type="button" class="evidence-link" data-evidence="product" data-i18n="capabilities.evidence">Show evidence ↘</button></article>
-            <article><span data-i18n="capabilities.systems.label">SYSTEMS</span><h3 data-i18n="capabilities.systems.title">Embedded architecture</h3><div><i>Embedded C / C++</i><i data-i18n="capabilities.systems.item2">Microcontrollers</i><i>CAN</i><i>AUTOSAR</i></div><button type="button" class="evidence-link" data-evidence="embedded" data-i18n="capabilities.evidence">Show evidence ↘</button></article>
-            <article><span data-i18n="capabilities.models.label">MODELS</span><h3 data-i18n="capabilities.models.title">Model-based engineering</h3><div><i>MATLAB / Simulink</i><i data-i18n="capabilities.models.item2">Control systems</i><i data-i18n="capabilities.models.item3">System identification</i><i data-i18n="capabilities.models.item4">Validation</i></div><button type="button" class="evidence-link" data-evidence="research" data-i18n="capabilities.evidence">Show evidence ↘</button></article>
-            <article><span data-i18n="capabilities.enablement.label">ENABLEMENT</span><h3 data-i18n="capabilities.enablement.title">Engineering tools & automation</h3><div><i>Python</i><i>C# / .NET</i><i>Qt</i><i>Jenkins / CI</i></div><button type="button" class="evidence-link" data-evidence="tools" data-i18n="capabilities.evidence">Show evidence ↘</button></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="insights shell" id="insights">
-        <div class="insights-heading reveal">
-          <div><span class="section-number">06</span><span class="kicker" data-i18n="insights.kicker">Working notes</span></div>
-          <h2 data-i18n="insights.title">Ideas from the intersection of product and engineering.</h2>
-          <p data-i18n="insights.intro">Short, practical perspectives on building complex technical products.</p>
-        </div>
-        <div class="insight-grid">
-          <article class="insight-card reveal"><span>PRODUCT × SYSTEMS</span><h3 data-i18n="insights.article1.title">Product ownership for embedded systems</h3><p data-i18n="insights.article1.summary">Why hardware constraints, integration paths, and system risk belong in product conversations.</p><button type="button" data-article="embedded-product" data-i18n="insights.read">Read note ↗</button></article>
-          <article class="insight-card reveal"><span>CLARITY × DELIVERY</span><h3 data-i18n="insights.article2.title">Turning engineering depth into product clarity</h3><p data-i18n="insights.article2.summary">A practical way to translate technical complexity into priorities and decisions.</p><button type="button" data-article="engineering-clarity" data-i18n="insights.read">Read note ↗</button></article>
-          <article class="insight-card reveal"><span>FEEDBACK × QUALITY</span><h3 data-i18n="insights.article3.title">Build feedback into the delivery system</h3><p data-i18n="insights.article3.summary">How integration, validation, and learning loops reduce late surprises.</p><button type="button" data-article="feedback-delivery" data-i18n="insights.read">Read note ↗</button></article>
-        </div>
-      </section>
-
       <section class="experience shell" id="experience">
         <div class="experience-heading reveal">
-          <span class="section-number">07</span>
+          <span class="section-number">05</span>
           <span class="kicker" data-i18n="experience.kicker">Experience</span>
           <h2 data-i18n="experience.title">A career built from the system outward.</h2>
         </div>
@@ -253,8 +340,7 @@
         <div class="experience-layout">
           <div class="experience-years reveal" aria-hidden="true"><span>2015</span><i></i><span data-i18n="common.now">NOW</span></div>
           <div class="timeline reveal">
-            <article><time data-i18n="common.current">CURRENT</time><div><h3>Technical Product Owner</h3><p>Vaillant Group · Remscheid</p><small data-i18n="experience.current.text">Current assignment within the Innovation HW/SW Specialist role, connecting product priorities and embedded engineering delivery.</small></div></article>
-            <article><time data-i18n="common.since">2022 — NOW</time><div><h3>Innovation HW/SW Specialist</h3><p>Vaillant Group · Remscheid</p><small data-i18n="experience.vaillant.text">Embedded and model-based development, software integration, CI, and engineering-tool development.</small></div></article>
+            <article><time data-i18n="common.since">2022 — NOW</time><div><h3 data-i18n="experience.vaillant.role">Innovation HW/SW Specialist</h3><p>Vaillant Group · Remscheid</p><small data-i18n-html="experience.current.text"><strong>Current assignment: Technical Product Owner.</strong> Building on embedded development, integration, CI, and engineering-tool experience.</small></div></article>
             <article><time>2019 — 2021</time><div><h3 data-i18n="experience.bertrandt.role">Embedded Software Development Engineer</h3><p data-i18n="experience.bertrandt.company">Bertrandt Ingenieurbüro · Cologne</p><small data-i18n="experience.bertrandt.text">Embedded and model-based software for Vaillant Group, StreetScooter, and Inalfa Roof Systems.</small></div></article>
             <article><time>2018</time><div><h3 data-i18n="experience.research.role">Research Associate</h3><p data-i18n="experience.freiburg">University of Freiburg · IMTEK</p><small data-i18n="experience.research.text">Electrochemical sensing protocols, experimental design, and evaluation.</small></div></article>
             <article><time>2016 — 2018</time><div><h3 data-i18n="experience.assistant.role">Research Assistant</h3><p data-i18n="experience.freiburg">University of Freiburg · IMTEK</p><small data-i18n="experience.assistant.text">Laboratory systems, corrosion analysis, infrared sensing, and data acquisition.</small></div></article>
@@ -270,12 +356,47 @@
         </div>
       </section>
 
+      <section class="capabilities">
+        <div class="shell capabilities-layout">
+          <div class="capabilities-heading reveal">
+            <span class="section-number">06</span>
+            <span class="kicker" data-i18n="capabilities.kicker">Capability map</span>
+            <h2 data-i18n-html="capabilities.title">Product range.<br />Engineering depth.</h2>
+            <p data-i18n="capabilities.intro">I work across the conversations that shape a product—from priorities and stakeholders to models, code, integration, and quality.</p>
+          </div>
+
+          <div class="capability-table reveal">
+            <article><span data-i18n="capabilities.product.label">PRODUCT</span><h3 data-i18n="capabilities.product.title">Technical product ownership</h3><div><i data-i18n="capabilities.product.item1">Direction</i><i data-i18n="capabilities.product.item2">Priorities</i><i data-i18n="capabilities.product.item3">Stakeholders</i><i>Agile / SAFe</i></div></article>
+            <article><span data-i18n="capabilities.systems.label">SYSTEMS</span><h3 data-i18n="capabilities.systems.title">Embedded architecture</h3><div><i>Embedded C / C++</i><i data-i18n="capabilities.systems.item2">Microcontrollers</i><i>CAN</i><i>AUTOSAR</i></div></article>
+            <article><span data-i18n="capabilities.models.label">MODELS</span><h3 data-i18n="capabilities.models.title">Model-based engineering</h3><div><i>MATLAB / Simulink</i><i data-i18n="capabilities.models.item2">Control systems</i><i data-i18n="capabilities.models.item3">System identification</i><i data-i18n="capabilities.models.item4">Validation</i></div></article>
+            <article><span data-i18n="capabilities.enablement.label">ENABLEMENT</span><h3 data-i18n="capabilities.enablement.title">Engineering tools & automation</h3><div><i>Python</i><i>C# / .NET</i><i>Qt</i><i>Jenkins / CI</i></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="insights shell" id="insights">
+        <div class="insights-heading reveal">
+          <div><span class="section-number">07</span><span class="kicker" data-i18n="insights.kicker">Working notes</span></div>
+          <h2 data-i18n="insights.title">A practical note on product ownership for embedded systems.</h2>
+          <p data-i18n="insights.intro">One perspective on making complex technical delivery easier to reason about.</p>
+        </div>
+        <div class="insight-grid">
+          <article class="insight-card reveal"><span>PRODUCT × SYSTEMS</span><h3 data-i18n="insights.article1.title">Product ownership for embedded systems</h3><p data-i18n="insights.article1.summary">Why hardware constraints, integration paths, and system risk belong in product conversations.</p><button type="button" data-article="embedded-product" data-i18n="insights.read">Read note ↗</button></article>
+          <article class="insight-card reveal"><span>CLARITY × DELIVERY</span><h3 data-i18n="insights.article2.title">Turning engineering depth into product clarity</h3><p data-i18n="insights.article2.summary">A practical way to translate technical complexity into priorities and decisions.</p><button type="button" data-article="engineering-clarity" data-i18n="insights.read">Read note ↗</button></article>
+          <article class="insight-card reveal"><span>FEEDBACK × QUALITY</span><h3 data-i18n="insights.article3.title">Build feedback into the delivery system</h3><p data-i18n="insights.article3.summary">How integration, validation, and learning loops reduce late surprises.</p><button type="button" data-article="feedback-delivery" data-i18n="insights.read">Read note ↗</button></article>
+        </div>
+      </section>
+
       <section class="contact" id="contact">
         <div class="shell contact-layout">
           <div class="contact-copy reveal">
             <span data-i18n="contact.index">08 / CONTACT</span>
             <h2 data-i18n="contact.title">Have a complex product problem?</h2>
             <p data-i18n="contact.intro">Let’s make the system visible, align on what matters, and create a path forward.</p>
+            <div class="contact-quick-actions">
+              <a href="mailto:ganatra.dev@gmail.com"><span>Email</span><b>ganatra.dev@gmail.com ↗</b></a>
+              <a href="https://www.linkedin.com/in/devganatra" target="_blank" rel="noreferrer"><span>LinkedIn</span><b data-i18n="contact.linkedin">Connect professionally ↗</b></a>
+            </div>
           </div>
 
           <div class="form-success reveal" id="form-success" role="status" hidden>
@@ -334,7 +455,7 @@
 
           <a class="contact-email reveal" href="mailto:ganatra.dev@gmail.com"><span>ganatra.dev@gmail.com</span><b>↗</b></a>
           <div class="contact-footer reveal">
-            <span data-i18n="hero.location">Cologne, Germany</span>
+            <span data-i18n="hero.location">Based in Cologne, Germany</span>
             <div><a href="https://www.linkedin.com/in/devganatra" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/devganatra" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://dev.to/devganatra" target="_blank" rel="noreferrer">DEV ↗</a></div>
             <span>© <span id="year"></span> Dev Praful Ganatra</span>
           </div>
@@ -350,8 +471,8 @@
     <div class="reading-progress" aria-hidden="true"><span></span></div>
 
     <script src="https://web3forms.com/client/script.js" async defer></script>
-    <script src="content.js?v=14"></script>
-    <script src="i18n.js?v=15"></script>
-    <script src="script.js?v=16"></script>
+    <script src="content.js?v=16"></script>
+    <script src="i18n.js?v=21"></script>
+    <script src="script.js?v=18"></script>
   </body>
 </html>
