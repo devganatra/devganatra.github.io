@@ -28,14 +28,15 @@ window.portfolioContent = {
       research: {
         eyebrow: "UNIVERSITY OF FREIBURG · 2016-2018",
         title: "New sensing methods for neural implants",
-        intro: "Experimental systems and electrochemical methods for evaluating sensing concepts in a demanding biomedical research environment.",
+        intro: "Electrochemical methods that turn existing platinum neural-interface electrodes into in-situ sensors of their chemical environment and condition.",
         sections: [
-          ["Context", "Research into neural interfaces required careful electrochemical experiments, dependable acquisition, and repeatable evaluation of sensor behaviour."],
-          ["My role", "Design experiments, prepare laboratory systems, develop measurement workflows, analyse data, and contribute to published research."],
-          ["Method", "Turn open research questions into controlled protocols, validate the measurement chain, document observations, and iterate from evidence."],
-          ["Contribution", "Reliable experimental workflows and evaluated sensing approaches that supported the wider research programme."],
+          ["Context", "Long-term neural implants need better online information about the electrode-tissue interface. Conventional assessment often depends on impedance, imaging, histology, or explanted devices."],
+          ["My role", "Develop electrochemical sensing and stimulation protocols, perform in-vitro and in-vivo measurements, automate long-term data evaluation in MATLAB, and contribute to the journal publication."],
+          ["Master's thesis", "Electrochemical Sensing and in Situ Corrosion Analysis for Neuroimplants covered oxygen and hydrogen-peroxide measurement, platinum surface electrochemistry, protocol design, data analysis, and implant-corrosion assessment."],
+          ["Analysis application", "Built a MATLAB application for repeatable analysis of electrochemical experiments: separating protocol phases, generating batch plots, calculating calibration statistics, comparing electrodes, and visualising long-term in-vitro and in-vivo behaviour."],
+          ["Published result", "The resulting multi-step amperometric and potentiometric method used existing Pt and Pt/Ir electrodes as chemical sensors and could repeatedly quantify and restore sensitivity during in-vivo evaluation."],
         ],
-        tags: ["Electrochemistry", "Experimental systems", "Data acquisition", "Research"],
+        tags: ["Electrochemistry", "Neural interfaces", "MATLAB", "In-vivo research", "Publication"],
       },
     },
     articles: {
@@ -103,14 +104,15 @@ window.portfolioContent = {
       research: {
         eyebrow: "UNIVERSITÄT FREIBURG · 2016-2018",
         title: "Neue Sensormethoden für neuronale Implantate",
-        intro: "Experimentelle Systeme und elektrochemische Methoden zur Bewertung von Sensorkonzepten in einem anspruchsvollen biomedizinischen Forschungsumfeld.",
+        intro: "Elektrochemische Methoden, mit denen vorhandene Platin-Elektroden neuronaler Schnittstellen als In-situ-Sensoren ihrer chemischen Umgebung und ihres Zustands genutzt werden.",
         sections: [
-          ["Kontext", "Die Forschung an neuronalen Schnittstellen erforderte sorgfältige elektrochemische Experimente, verlässliche Datenerfassung und reproduzierbare Bewertung des Sensorverhaltens."],
-          ["Meine Rolle", "Experimente planen, Laborsysteme vorbereiten, Messabläufe entwickeln, Daten analysieren und zu Veröffentlichungen beitragen."],
-          ["Methode", "Offene Forschungsfragen in kontrollierte Protokolle übersetzen, die Messkette validieren, Beobachtungen dokumentieren und evidenzbasiert iterieren."],
-          ["Beitrag", "Zuverlässige experimentelle Abläufe und bewertete Sensoransätze als Unterstützung des übergeordneten Forschungsprogramms."],
+          ["Kontext", "Langzeit-Neuroimplantate benötigen bessere Online-Informationen über die Elektroden-Gewebe-Grenzfläche. Konventionelle Bewertungen beruhen häufig auf Impedanz, Bildgebung, Histologie oder explantierten Geräten."],
+          ["Meine Rolle", "Elektrochemische Sensor- und Stimulationsprotokolle entwickeln, In-vitro- und In-vivo-Messungen durchführen, Langzeitdaten in MATLAB automatisiert auswerten und zur Fachpublikation beitragen."],
+          ["Masterarbeit", "Electrochemical Sensing and in Situ Corrosion Analysis for Neuroimplants umfasste Sauerstoff- und Wasserstoffperoxid-Messung, Oberflächenelektrochemie von Platin, Protokolldesign, Datenanalyse und Korrosionsbewertung von Implantaten."],
+          ["Analyseanwendung", "Entwicklung einer MATLAB-Anwendung zur reproduzierbaren Auswertung elektrochemischer Experimente: Trennung von Protokollphasen, Batch-Plots, Kalibrierstatistiken, Elektrodenvergleiche sowie Visualisierung des langfristigen In-vitro- und In-vivo-Verhaltens."],
+          ["Publiziertes Ergebnis", "Die resultierende mehrstufige amperometrische und potentiometrische Methode nutzte vorhandene Pt- und Pt/Ir-Elektroden als chemische Sensoren und konnte die Empfindlichkeit bei In-vivo-Untersuchungen wiederholt quantifizieren und wiederherstellen."],
         ],
-        tags: ["Elektrochemie", "Experimentalsysteme", "Datenerfassung", "Forschung"],
+        tags: ["Elektrochemie", "Neuronale Schnittstellen", "MATLAB", "In-vivo-Forschung", "Publikation"],
       },
     },
     articles: {

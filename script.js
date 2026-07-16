@@ -94,21 +94,34 @@ const loadProjectMetadata = async () => {
 loadProjectMetadata();
 window.addEventListener("portfolio-language-change", renderProjectMetadata);
 
-// Evidence links connect capability claims to the strongest relevant proof.
-const evidenceTargets = {
-  product: '[data-project-card="sakhya"]',
-  embedded: '[data-project-card="sakhya"]',
-  tools: '[data-project-card="portfolio"]',
-  research: '[data-case-study="research"]',
+// The project library stays comprehensive without forcing every visitor to scan every item.
+const projectFilterButtons = [...document.querySelectorAll("[data-project-filter]")];
+const projectLibraryItems = [...document.querySelectorAll("[data-project-category]")];
+const projectLibrary = document.querySelector(".project-library");
+const libraryMoreButton = document.querySelector("[data-library-more]");
+const renderLibraryMore = () => {
+  if (!libraryMoreButton) return;
+  const expanded = projectLibrary?.classList.contains("is-expanded") || false;
+  const label = libraryMoreButton.querySelector("span");
+  const icon = libraryMoreButton.querySelector("b");
+  if (label) label.textContent = translateUi(expanded ? "library.less" : "library.more") || (expanded ? "Show fewer projects" : "Show four more projects");
+  if (icon) icon.textContent = expanded ? "↑" : "↓";
 };
-document.querySelectorAll("[data-evidence]").forEach((button) => button.addEventListener("click", () => {
-  const evidence = button.dataset.evidence;
-  const target = document.querySelector(evidenceTargets[evidence]);
-  const highlight = target?.closest(".work-card") || target;
-  highlight?.classList.add("is-evidence");
-  setTimeout(() => highlight?.classList.remove("is-evidence"), 1800);
-  highlight?.scrollIntoView({ behavior: "smooth", block: "center" });
+projectFilterButtons.forEach((button) => button.addEventListener("click", () => {
+  const selected = button.dataset.projectFilter;
+  projectFilterButtons.forEach((item) => item.classList.toggle("is-active", item === button));
+  projectLibrary?.classList.toggle("is-filtering", selected !== "all");
+  projectLibraryItems.forEach((item) => {
+    const categories = item.dataset.projectCategory.split(" ");
+    item.hidden = selected !== "all" && !categories.includes(selected);
+  });
 }));
+libraryMoreButton?.addEventListener("click", () => {
+  const expanded = projectLibrary?.classList.toggle("is-expanded") || false;
+  libraryMoreButton.setAttribute("aria-expanded", String(expanded));
+  renderLibraryMore();
+});
+window.addEventListener("portfolio-language-change", renderLibraryMore);
 
 // Case studies and working notes share one accessible dialog.
 const dialog = document.querySelector("#portfolio-dialog");
