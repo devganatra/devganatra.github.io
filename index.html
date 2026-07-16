@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="stylesheet" href="styles.css?v=16" />
+    <link rel="stylesheet" href="styles.css?v=17" />
   </head>
   <body>
     <header class="topbar">
@@ -155,24 +155,61 @@
         </div>
       </section>
 
-      <section class="github shell">
+      <section class="github shell" id="projects">
         <div class="github-heading reveal">
-          <div><span class="section-number">04</span><span class="kicker">GitHub</span></div>
-          <div><h2 data-i18n="github.title">Code, tools, and experiments.</h2><p data-i18n="github.intro">The latest public repositories are loaded directly from my GitHub profile.</p></div>
-          <a href="https://github.com/devganatra?tab=repositories" target="_blank" rel="noreferrer" data-i18n="github.all">View all repositories ↗</a>
+          <div><span class="section-number">04</span><span class="kicker" data-i18n="github.kicker">Public proof</span></div>
+          <div><h2 data-i18n="github.title">Selected builds, with context.</h2><p data-i18n="github.intro">A focused view of the projects that best show how I turn an idea into a useful, working product.</p></div>
+          <a href="https://github.com/devganatra?tab=repositories" target="_blank" rel="noreferrer" data-i18n="github.all">GitHub profile ↗</a>
         </div>
-        <div class="project-tools reveal" aria-label="Project controls">
-          <label class="project-search"><span data-i18n="github.search">Search projects</span><input id="project-search" type="search" placeholder="Name, language, topic…" data-i18n-placeholder="github.searchPlaceholder" /></label>
-          <div class="project-filters" role="group" aria-label="Filter projects">
-            <button type="button" class="is-active" data-project-filter="all" data-i18n="github.filter.all">All</button>
-            <button type="button" data-project-filter="product" data-i18n="github.filter.product">Product</button>
-            <button type="button" data-project-filter="embedded" data-i18n="github.filter.embedded">Embedded</button>
-            <button type="button" data-project-filter="tools" data-i18n="github.filter.tools">Tools</button>
-            <button type="button" data-project-filter="research" data-i18n="github.filter.research">Research</button>
-          </div>
-          <label class="project-sort"><span data-i18n="github.sort">Sort</span><select id="project-sort"><option value="updated" data-i18n="github.sort.updated">Recently updated</option><option value="name" data-i18n="github.sort.name">Name</option><option value="stars" data-i18n="github.sort.stars">Stars</option></select></label>
+
+        <div class="project-showcase" aria-label="Selected public projects">
+          <article class="project-case project-case-featured reveal" data-project-card="sakhya" data-repository="Sakhya">
+            <div class="project-case-top">
+              <span class="project-number">01</span>
+              <span class="project-status"><i></i><span data-i18n="github.sakhya.status">BETA 1 · ACTIVE BUILD</span></span>
+            </div>
+            <div class="project-case-copy">
+              <span class="project-type" data-i18n="github.sakhya.type">PRODUCT DESIGN · NATIVE APP · PERSONAL SYSTEMS</span>
+              <h3>Sakhya</h3>
+              <p class="project-lead" data-i18n="github.sakhya.lead">A private daily companion that turns natural input into one useful timeline for routines, reminders, wellbeing, purchases, reading, and reflection.</p>
+            </div>
+            <div class="project-proof">
+              <div><span data-i18n="github.proof.intent">Product intent</span><p data-i18n="github.sakhya.intent">Reduce the friction of tracking daily life across disconnected apps and categories.</p></div>
+              <div><span data-i18n="github.proof.delivery">Delivery proof</span><p data-i18n="github.sakhya.delivery">A working Swift codebase for iPhone, iPad, and Mac with Apple Health, Reminders, local persistence, and release automation.</p></div>
+            </div>
+            <div class="project-case-footer">
+              <div class="project-tags"><span>Swift</span><span>SwiftUI</span><span>Apple Health</span><span>GitHub Actions</span></div>
+              <a class="project-link" href="https://github.com/devganatra/Sakhya" target="_blank" rel="noreferrer"><span data-i18n="github.source">View source</span><b>↗</b></a>
+            </div>
+            <div class="project-live-meta"><span><i></i><span data-repo-language>Swift</span></span><span><span data-i18n="github.updated">Updated</span> <time data-repo-updated>—</time></span></div>
+          </article>
+
+          <article class="project-case project-case-portfolio reveal" data-project-card="portfolio" data-repository="devganatra.github.io">
+            <div class="project-case-top">
+              <span class="project-number">02</span>
+              <span class="project-status"><i></i><span data-i18n="github.portfolio.status">LIVE · BUILT IN PUBLIC</span></span>
+            </div>
+            <div class="project-case-copy">
+              <span class="project-type" data-i18n="github.portfolio.type">WEB PRODUCT · INFORMATION DESIGN · AUTOMATION</span>
+              <h3 data-i18n="github.portfolio.title">This portfolio</h3>
+              <p class="project-lead" data-i18n="github.portfolio.lead">A professional home for my work—designed and engineered as a fast, bilingual, accessible static product rather than a generic résumé page.</p>
+            </div>
+            <div class="project-proof">
+              <div><span data-i18n="github.proof.intent">Product intent</span><p data-i18n="github.portfolio.intent">Make technical product experience easy to understand for both engineering and business audiences.</p></div>
+              <div><span data-i18n="github.proof.delivery">Delivery proof</span><p data-i18n="github.portfolio.delivery">Responsive design, English and German content, offline support, automated project data, downloadable résumés, and a protected contact flow.</p></div>
+            </div>
+            <div class="project-case-footer">
+              <div class="project-tags"><span>HTML / CSS / JS</span><span>GitHub Pages</span><span>PWA</span><span>i18n</span></div>
+              <div class="project-links"><a class="project-link" href="https://devganatra.github.io/" target="_blank" rel="noreferrer"><span data-i18n="github.live">View live</span><b>↗</b></a><a class="project-link project-link-secondary" href="https://github.com/devganatra/devganatra.github.io" target="_blank" rel="noreferrer"><span data-i18n="github.source">View source</span><b>↗</b></a></div>
+            </div>
+            <div class="project-live-meta"><span><i></i><span data-repo-language>JavaScript</span></span><span><span data-i18n="github.updated">Updated</span> <time data-repo-updated>—</time></span></div>
+          </article>
         </div>
-        <div class="repo-list" id="repo-list" aria-live="polite"><p class="repo-message" data-i18n="github.loading">Loading public repositories…</p></div>
+
+        <div class="project-editorial-note reveal">
+          <span data-i18n="github.note.label">A deliberate edit</span>
+          <p data-i18n="github.note.text">Experiments and learning repositories remain available on GitHub, but they are not presented as case studies. Here, relevance and evidence matter more than repository count.</p>
+        </div>
       </section>
 
       <section class="capabilities">
@@ -314,7 +351,7 @@
 
     <script src="https://web3forms.com/client/script.js" async defer></script>
     <script src="content.js?v=14"></script>
-    <script src="i18n.js?v=14"></script>
-    <script src="script.js?v=15"></script>
+    <script src="i18n.js?v=15"></script>
+    <script src="script.js?v=16"></script>
   </body>
 </html>

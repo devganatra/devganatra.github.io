@@ -6,7 +6,7 @@ A responsive, bilingual product and engineering portfolio for Dev Praful Ganatra
 
 - English and German content with browser-language detection and a persistent manual switch
 - Light and dark themes that follow the visitor's system preference
-- Searchable, filterable, and sortable GitHub project explorer
+- Curated public project case studies with live GitHub metadata
 - Detailed work case studies and engineering notes in an accessible dialog
 - Downloadable one-page English and German résumés
 - Installable web-app metadata and offline caching

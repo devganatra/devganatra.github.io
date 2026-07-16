@@ -13,19 +13,6 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
 document.querySelector("#year").textContent = new Date().getFullYear();
 
-const languageColors = {
-  Swift: "#f05138",
-  Python: "#3776ab",
-  JavaScript: "#c6a800",
-  TypeScript: "#3178c6",
-  HTML: "#e34c26",
-  CSS: "#663399",
-  Java: "#b07219",
-  Shell: "#5d8c40",
-  "C++": "#00599c",
-  C: "#555",
-};
-
 const escapeHtml = (value = "") =>
   String(value).replace(/[&<>'"]/g, (character) => ({
     "&": "&amp;",
@@ -69,100 +56,58 @@ const updateScrollState = () => {
 updateScrollState();
 window.addEventListener("scroll", updateScrollState, { passive: true });
 
-let repositories = [];
-let activeProjectFilter = "all";
-let projectQuery = "";
-let projectSort = "updated";
-
-const classifyRepository = (repository) => {
-  const text = [repository.name, repository.description, repository.language, ...(repository.topics || [])].join(" ").toLowerCase();
-  const categories = new Set();
-  if (/product|agile|requirement|roadmap|stakeholder/.test(text)) categories.add("product");
-  if (/embedded|firmware|microcontroller|arduino|esp|can|autosar|c\+\+|\bc\b|swift/.test(text)) categories.add("embedded");
-  if (/python|tool|automation|jenkins|qt|script|cli|api|javascript|typescript/.test(text)) categories.add("tools");
-  if (/research|sensor|signal|data|model|matlab|simulink|machine learning|electro/.test(text)) categories.add("research");
-  if (!categories.size) categories.add("tools");
-  return [...categories];
+// Curated project cards use GitHub only for lightweight, verifiable metadata.
+const formatProjectDate = (value) => {
+  if (!value) return "—";
+  const locale = window.portfolioI18n?.language === "de" ? "de-DE" : "en-GB";
+  return new Intl.DateTimeFormat(locale, { month: "short", year: "numeric" }).format(new Date(value));
 };
 
-const renderRepositories = () => {
-  const list = document.querySelector("#repo-list");
-  if (!list) return;
-  const normalizedQuery = projectQuery.trim().toLowerCase();
-  const filtered = repositories
-    .filter((repository) => activeProjectFilter === "all" || repository.categories.includes(activeProjectFilter))
-    .filter((repository) => !normalizedQuery || [repository.name, repository.description, repository.language, ...(repository.topics || [])].join(" ").toLowerCase().includes(normalizedQuery))
-    .sort((a, b) => {
-      if (projectSort === "name") return a.name.localeCompare(b.name);
-      if (projectSort === "stars") return b.stargazers_count - a.stargazers_count;
-      return new Date(b.updated_at) - new Date(a.updated_at);
-    });
-
-  if (!filtered.length) {
-    list.innerHTML = `<p class="repo-message">${escapeHtml(translateUi("github.empty") || "No projects match this view.")}</p>`;
-    return;
-  }
-
-  list.innerHTML = filtered.slice(0, 12).map((repository, index) => {
-    const language = repository.language || "Project";
-    const color = languageColors[language] || "#315df4";
-    const description = repository.description || translateUi("github.repoFallback") || "Explore the source and project details on GitHub.";
-    const categoryLabels = repository.categories.slice(0, 2).map((category) => `<span>${escapeHtml(category)}</span>`).join("");
-    return `
-      <a class="repo-row" href="${escapeHtml(repository.html_url)}" target="_blank" rel="noreferrer" data-categories="${escapeHtml(repository.categories.join(" "))}">
-        <span>${String(index + 1).padStart(2, "0")}</span>
-        <h3>${escapeHtml(repository.name.replaceAll("_", " ").replaceAll("-", " "))}</h3>
-        <p>${escapeHtml(description)}</p>
-        <div class="repo-categories">${categoryLabels}</div>
-        <div class="repo-row-meta"><span style="color:${color}">●</span><span>${escapeHtml(language)}</span><span>☆ ${repository.stargazers_count}</span></div>
-        <b>↗</b>
-      </a>`;
-  }).join("");
+let projectMetadata = [];
+const renderProjectMetadata = () => {
+  document.querySelectorAll("[data-repository]").forEach((card) => {
+    const repository = projectMetadata.find((item) => item.name === card.dataset.repository);
+    if (!repository) return;
+    const language = card.querySelector("[data-repo-language]");
+    const updated = card.querySelector("[data-repo-updated]");
+    if (language && repository.language) language.textContent = repository.language;
+    if (updated) {
+      updated.textContent = formatProjectDate(repository.updated_at);
+      updated.dateTime = repository.updated_at || "";
+    }
+  });
 };
 
-const loadRepositories = async () => {
-  const list = document.querySelector("#repo-list");
-  if (!list) return;
-  list.innerHTML = `<p class="repo-message">${escapeHtml(translateUi("github.loading") || "Loading public repositories…")}</p>`;
+const loadProjectMetadata = async () => {
   try {
     let response = await fetch("data/projects.json", { cache: "no-store" });
     if (!response.ok) response = await fetch("https://api.github.com/users/devganatra/repos?sort=updated&per_page=100", { cache: "no-store" });
-    if (!response.ok) throw new Error("Project data unavailable");
+    if (!response.ok) throw new Error("Project metadata unavailable");
     const payload = await response.json();
-    const items = Array.isArray(payload) ? payload : payload.repositories;
-    repositories = items
-      .filter((repository) => !repository.fork && repository.name !== "devganatra.github.io")
-      .map((repository) => ({ ...repository, categories: classifyRepository(repository) }));
-    if (!repositories.length) throw new Error("No repositories found");
-    renderRepositories();
+    projectMetadata = (Array.isArray(payload) ? payload : payload.repositories) || [];
+    renderProjectMetadata();
   } catch (error) {
-    const message = translateUi("github.error") || "Repositories are temporarily unavailable. View them on GitHub ↗";
-    list.innerHTML = `<p class="repo-message"><a href="https://github.com/devganatra?tab=repositories">${escapeHtml(message)}</a></p>`;
+    // The cards remain complete and useful when GitHub is unavailable.
   }
 };
 
-document.querySelector("#project-search")?.addEventListener("input", (event) => { projectQuery = event.target.value; renderRepositories(); });
-document.querySelector("#project-sort")?.addEventListener("change", (event) => { projectSort = event.target.value; renderRepositories(); });
-document.querySelectorAll("[data-project-filter]").forEach((button) => button.addEventListener("click", () => {
-  activeProjectFilter = button.dataset.projectFilter;
-  document.querySelectorAll("[data-project-filter]").forEach((item) => item.classList.toggle("is-active", item === button));
-  renderRepositories();
-}));
+loadProjectMetadata();
+window.addEventListener("portfolio-language-change", renderProjectMetadata);
 
-loadRepositories();
-window.addEventListener("portfolio-language-change", () => { renderRepositories(); });
-
-// Evidence links connect capability claims to real work and repositories.
-const evidenceToCase = { product: "vaillant", embedded: "vaillant", tools: "bertrandt", research: "research" };
+// Evidence links connect capability claims to the strongest relevant proof.
+const evidenceTargets = {
+  product: '[data-project-card="sakhya"]',
+  embedded: '[data-project-card="sakhya"]',
+  tools: '[data-project-card="portfolio"]',
+  research: '[data-case-study="research"]',
+};
 document.querySelectorAll("[data-evidence]").forEach((button) => button.addEventListener("click", () => {
   const evidence = button.dataset.evidence;
-  activeProjectFilter = evidence;
-  document.querySelectorAll("[data-project-filter]").forEach((item) => item.classList.toggle("is-active", item.dataset.projectFilter === evidence));
-  renderRepositories();
-  const caseButton = document.querySelector(`[data-case-study="${evidenceToCase[evidence]}"]`);
-  caseButton?.closest(".work-card")?.classList.add("is-evidence");
-  setTimeout(() => caseButton?.closest(".work-card")?.classList.remove("is-evidence"), 1800);
-  document.querySelector(".github")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  const target = document.querySelector(evidenceTargets[evidence]);
+  const highlight = target?.closest(".work-card") || target;
+  highlight?.classList.add("is-evidence");
+  setTimeout(() => highlight?.classList.remove("is-evidence"), 1800);
+  highlight?.scrollIntoView({ behavior: "smooth", block: "center" });
 }));
 
 // Case studies and working notes share one accessible dialog.
