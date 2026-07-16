@@ -13,7 +13,7 @@ const response = await fetch(`https://api.github.com/users/${username}/repos?sor
 if (!response.ok) throw new Error(`GitHub API returned ${response.status}: ${await response.text()}`);
 
 const repositories = (await response.json())
-  .filter((repository) => !repository.fork && repository.name !== `${username}.github.io`)
+  .filter((repository) => !repository.fork)
   .map((repository) => ({
     name: repository.name,
     description: repository.description,
