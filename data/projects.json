@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-07-15T13:42:06.854Z",
+  "generated_at": "2026-07-17T06:26:00.226Z",
   "repositories": [
     {
       "name": "devganatra.github.io",
       "description": "Personal portfolio and project showcase for Dev Ganatra",
       "html_url": "https://github.com/devganatra/devganatra.github.io",
       "homepage": "https://devganatra.github.io/",
-      "language": "JavaScript",
+      "language": "HTML",
       "stargazers_count": 0,
       "forks_count": 0,
       "topics": [],
-      "updated_at": "2026-07-14T14:20:59Z",
+      "updated_at": "2026-07-16T10:49:18Z",
       "fork": false
     },
     {
