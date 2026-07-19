@@ -67,7 +67,9 @@ em { font-style: normal; color: var(--blue); }
 .hero-status span:first-child { display: flex; gap: 10px; align-items: center; color: var(--white); }
 .hero-status i { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 5px rgba(214,250,72,.12); }
 .hero-title { margin: auto 0 7vh; }
-.hero-index { display: block; margin-bottom: 25px; color: var(--lime); font: 500 10px var(--mono); letter-spacing: .1em; }
+.hero-index { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-bottom: 25px; color: var(--lime); font: 500 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+.hero-index strong { color: var(--white); font-weight: 500; }
+.hero-index i { font-style: normal; }
 .hero h1 { max-width: 1190px; margin: 0; font: 500 clamp(62px, 7.6vw, 110px)/.94 var(--display); letter-spacing: -.05em; }
 .hero h1 em { color: #839dff; }
 .hero-lower { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }

@@ -1,11 +1,15 @@
 {
   "name": "Dev Ganatra - Product and Engineering Portfolio",
   "short_name": "Dev Ganatra",
+  "id": "/",
   "start_url": "/",
+  "scope": "/",
+  "lang": "en",
   "display": "standalone",
   "background_color": "#101418",
   "theme_color": "#101418",
   "description": "Technical product ownership grounded in embedded engineering.",
+  "categories": ["business", "productivity", "portfolio"],
   "icons": [
     {
       "src": "assets/icon.svg",
