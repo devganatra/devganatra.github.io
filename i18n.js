@@ -9,7 +9,7 @@ const translations = {
     "hero.location": "Standort Köln, Deutschland",
     "hero.index": "01 / PROFIL",
     "hero.title": "Technische Produktverantwortung,<br /><em>verankert im Engineering.</em>",
-    "hero.intro": "Ich verbinde Produktrichtung, Stakeholder-Bedürfnisse und Embedded Engineering, damit komplexe Systeme klar, priorisiert und umsetzbar werden.",
+    "hero.intro": "Ich bin Dev Ganatra, Technical Product Owner mit Standort Köln, Deutschland. Ich verbinde Produktrichtung, Stakeholder-Bedürfnisse und Embedded Engineering, damit komplexe Systeme klar, priorisiert und umsetzbar werden.",
     "hero.pillar1": "PRODUKTAUSRICHTUNG",
     "hero.pillar2": "EMBEDDED SYSTEMS",
     "hero.pillar3": "TECHNISCHE UMSETZUNG",
@@ -222,14 +222,14 @@ const originalPlaceholders = new Map(placeholderNodes.map((element) => [element,
 const metadata = {
   en: {
     title: "Dev Praful Ganatra — Technical Product Owner",
-    description: "Dev Praful Ganatra — Technical Product Owner and Innovation HW/SW Specialist building dependable connected products.",
-    ogDescription: "Product ownership grounded in embedded engineering, systems thinking, and delivery.",
+    description: "Dev Praful Ganatra (Dev Ganatra) is a Technical Product Owner based in Cologne, Germany, specializing in embedded systems, HW/SW innovation, and connected products.",
+    ogDescription: "Dev Ganatra — Technical Product Owner in Germany, grounded in embedded engineering, systems thinking, and delivery.",
     locale: "en_GB",
   },
   de: {
     title: "Dev Praful Ganatra — Technical Product Owner",
-    description: "Dev Praful Ganatra — Technical Product Owner und Innovation HW/SW Specialist für zuverlässige vernetzte Produkte.",
-    ogDescription: "Product Ownership auf Basis von Embedded Engineering, Systemdenken und technischer Umsetzung.",
+    description: "Dev Praful Ganatra (Dev Ganatra) ist Technical Product Owner in Köln, Deutschland, mit Fokus auf Embedded Systems, HW/SW-Innovation und vernetzte Produkte.",
+    ogDescription: "Dev Ganatra — Technical Product Owner in Deutschland, mit Embedded Engineering, Systemdenken und technischer Umsetzung.",
     locale: "de_DE",
   },
 };
