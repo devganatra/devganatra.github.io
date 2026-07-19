@@ -224,11 +224,13 @@ const metadata = {
     title: "Dev Praful Ganatra — Technical Product Owner",
     description: "Dev Praful Ganatra — Technical Product Owner and Innovation HW/SW Specialist building dependable connected products.",
     ogDescription: "Product ownership grounded in embedded engineering, systems thinking, and delivery.",
+    locale: "en_GB",
   },
   de: {
     title: "Dev Praful Ganatra — Technical Product Owner",
     description: "Dev Praful Ganatra — Technical Product Owner und Innovation HW/SW Specialist für zuverlässige vernetzte Produkte.",
     ogDescription: "Product Ownership auf Basis von Embedded Engineering, Systemdenken und technischer Umsetzung.",
+    locale: "de_DE",
   },
 };
 
@@ -256,7 +258,11 @@ const applyLanguage = (language, persist = false) => {
 
   document.title = metadata[selected].title;
   document.querySelector('meta[name="description"]').content = metadata[selected].description;
+  document.querySelector('meta[property="og:title"]').content = metadata[selected].title;
   document.querySelector('meta[property="og:description"]').content = metadata[selected].ogDescription;
+  document.querySelector('meta[property="og:locale"]').content = metadata[selected].locale;
+  document.querySelector('meta[name="twitter:title"]').content = metadata[selected].title;
+  document.querySelector('meta[name="twitter:description"]').content = metadata[selected].ogDescription;
   document.querySelectorAll("[data-language]").forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.language === selected));
   });
@@ -273,6 +279,11 @@ const applyLanguage = (language, persist = false) => {
     url.searchParams.set("lang", selected);
     history.replaceState({}, "", url);
   }
+  const canonicalUrl = new URL("https://devganatra.github.io/");
+  const explicitLanguage = new URL(window.location.href).searchParams.get("lang");
+  if (["en", "de"].includes(explicitLanguage)) canonicalUrl.searchParams.set("lang", explicitLanguage);
+  document.querySelector('link[rel="canonical"]').href = canonicalUrl.href;
+  document.querySelector('meta[property="og:url"]').content = canonicalUrl.href;
   window.dispatchEvent(new CustomEvent("portfolio-language-change", { detail: { language: selected } }));
 };
 
