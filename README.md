@@ -1,28 +1,31 @@
-# devganatra.me
+# Dev Ganatra — Product and Engineering Portfolio
 
 A responsive, bilingual product and engineering portfolio for Dev Praful Ganatra, hosted on GitHub Pages.
 
 ## Included
 
 - English and German content with browser-language detection and a persistent manual switch
-- Light and dark themes that follow the visitor's system preference
-- Curated public project case studies with live GitHub metadata
-- Detailed work case studies and engineering notes in an accessible dialog
+- Light and dark themes with a persistent manual switch
+- A concise homepage with audience-specific routes
+- Dedicated product, case-study, project, research, experience, and notes pages
+- Curated public projects with quiet, automatically refreshed GitHub metadata
+- Public-safe professional case studies that do not expose confidential company information
 - Downloadable one-page English and German résumés
 - Installable web-app metadata and offline caching
 - A protected Web3Forms contact form with hCaptcha, honeypot, and server-side spam filtering
+- Search metadata, structured data, a multi-page sitemap, and social-sharing artwork
 
 ## GitHub project automation
 
-The site reads `data/projects.json` first and falls back to the public GitHub API when needed. The `Refresh portfolio projects` GitHub Action runs daily and can also be started manually. It updates the snapshot only when repository data actually changes, so renamed and newly published projects appear without creating empty commits.
+The `Refresh portfolio projects` GitHub Action runs daily and can also be started manually. It updates `data/projects.json` only when public repository data changes. The projects page uses that snapshot for live language and update metadata on selected public projects; the portfolio remains curated instead of displaying every repository.
 
 ## Preview locally
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 4173
 ```
 
-Then open `http://localhost:8000`.
+Then open `http://localhost:4173`.
 
 The site uses plain HTML, CSS, and JavaScript, so it can be deployed directly to GitHub Pages, Netlify, Vercel, or any static host.
 
