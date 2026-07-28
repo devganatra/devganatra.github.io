@@ -169,6 +169,7 @@ img { max-width: 100%; }
 .section-kicker,
 .page-label {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   color: var(--lime);
@@ -202,6 +203,12 @@ img { max-width: 100%; }
   align-items: center;
 }
 .hero-copy { min-width: 0; }
+.hero-layout > *,
+.page-hero-grid > *,
+.case-layout > *,
+.article-layout > * {
+  min-width: 0;
+}
 .hero-copy h1,
 .page-hero h1 {
   margin: 26px 0 28px;
@@ -213,6 +220,14 @@ img { max-width: 100%; }
   display: block;
   color: var(--blue);
   font-style: normal;
+}
+html[lang="de"] .hero-copy h1 {
+  font-size: clamp(56px, 5.7vw, 82px);
+  letter-spacing: -0.048em;
+}
+html[lang="de"] .page-hero h1 {
+  font-size: clamp(52px, 5.7vw, 82px);
+  letter-spacing: -0.045em;
 }
 .hero-intro {
   max-width: 650px;
@@ -305,7 +320,7 @@ img { max-width: 100%; }
 .signal-node {
   position: relative;
   display: grid;
-  grid-template-columns: 38px 1fr;
+  grid-template-columns: 38px minmax(0, 1fr);
   align-items: center;
   gap: 15px;
 }
@@ -321,7 +336,7 @@ img { max-width: 100%; }
   color: var(--lime);
   font: 500 10px var(--mono);
 }
-.signal-node div { padding: 15px 16px; border: 1px solid var(--line); background: rgba(10, 14, 18, 0.34); }
+.signal-node div { min-width: 0; padding: 15px 16px; border: 1px solid var(--line); background: rgba(10, 14, 18, 0.34); }
 :root[data-theme="light"] .signal-node div { background: rgba(255,255,255,0.52); }
 .signal-node small { display: block; color: var(--muted); font: 400 10px var(--mono); text-transform: uppercase; }
 .signal-node strong { display: block; margin-top: 5px; font-size: 15px; font-weight: 500; }
@@ -702,6 +717,18 @@ img { max-width: 100%; }
   .hero-layout { min-height: 0; gap: 45px; padding-block: 52px; }
   .hero-copy h1,
   .page-hero h1 { font-size: clamp(48px, 15vw, 74px); }
+  html[lang="de"] .hero-copy h1,
+  html[lang="de"] .page-hero h1 {
+    font-size: clamp(44px, 12vw, 54px);
+    hyphens: manual;
+    overflow-wrap: break-word;
+  }
+  .eyebrow {
+    max-width: 100%;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  .signal-card { width: 100%; min-width: 0; }
   .hero-intro,
   .page-lead { font-size: 16px; }
   .hero-actions,
