@@ -1,6 +1,18 @@
 {
-  "generated_at": "2026-07-30T06:39:34.222Z",
+  "generated_at": "2026-07-31T07:12:08.602Z",
   "repositories": [
+    {
+      "name": "devganatra.github.io",
+      "description": "Personal portfolio and project showcase for Dev Ganatra",
+      "html_url": "https://github.com/devganatra/devganatra.github.io",
+      "homepage": "https://devganatra.github.io/",
+      "language": "HTML",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": [],
+      "updated_at": "2026-07-30T06:39:51Z",
+      "fork": false
+    },
     {
       "name": "Sakhya",
       "description": null,
@@ -11,18 +23,6 @@
       "forks_count": 0,
       "topics": [],
       "updated_at": "2026-07-29T14:37:06Z",
-      "fork": false
-    },
-    {
-      "name": "devganatra.github.io",
-      "description": "Personal portfolio and project showcase for Dev Ganatra",
-      "html_url": "https://github.com/devganatra/devganatra.github.io",
-      "homepage": "https://devganatra.github.io/",
-      "language": "HTML",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "topics": [],
-      "updated_at": "2026-07-29T06:44:12Z",
       "fork": false
     },
     {
