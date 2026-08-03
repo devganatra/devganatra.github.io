@@ -3,10 +3,12 @@ from reportlab.lib.colors import HexColor
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.pdfgen import canvas
+from reportlab.lib.utils import ImageReader
 
 
 OUT = Path("output/pdf")
 OUT.mkdir(parents=True, exist_ok=True)
+PORTRAIT = Path("assets/dev-ganatra-portrait.jpg")
 
 INK = HexColor("#101418")
 BLUE = HexColor("#315DF4")
@@ -144,17 +146,33 @@ def build_resume(language):
     header_h = 126
     c.setFillColor(INK)
     c.rect(0, height - header_h, width, header_h, fill=1, stroke=0)
-    c.setFillColor(LIME)
-    c.circle(width - 52, height - 40, 10, fill=1, stroke=0)
+    portrait_x = 42
+    portrait_y = height - 109
+    portrait_w = 70
+    portrait_h = 87.5
+    c.drawImage(
+        ImageReader(str(PORTRAIT)),
+        portrait_x,
+        portrait_y,
+        width=portrait_w,
+        height=portrait_h,
+        preserveAspectRatio=True,
+        anchor="c",
+        mask="auto",
+    )
+    c.setStrokeColor(LIME)
+    c.setLineWidth(1.5)
+    c.rect(portrait_x, portrait_y, portrait_w, portrait_h, fill=0, stroke=1)
     c.setFillColor(WHITE)
     c.setFont("Helvetica-Bold", 27)
-    c.drawString(42, height - 52, "DEV PRAFUL GANATRA")
+    c.drawString(130, height - 48, "DEV PRAFUL GANATRA")
     c.setFillColor(HexColor("#BBC5CB"))
     c.setFont("Helvetica-Bold", 8)
-    c.drawString(43, height - 73, data["role"])
+    c.drawString(131, height - 70, data["role"])
     contact_y = height - 100
-    contact_x = 43
-    c.setFont("Helvetica", 7.5)
+    contact_x = 131
+    contact_size = 6.4
+    c.setFont("Helvetica", contact_size)
     contact_items = [
         ("ganatra.dev@gmail.com", "mailto:ganatra.dev@gmail.com"),
         ("devganatra.github.io", "https://devganatra.github.io/"),
@@ -165,9 +183,9 @@ def build_resume(language):
         if index:
             separator = "  |  "
             c.drawString(contact_x, contact_y, separator)
-            contact_x += stringWidth(separator, "Helvetica", 7.5)
+            contact_x += stringWidth(separator, "Helvetica", contact_size)
         c.drawString(contact_x, contact_y, label)
-        label_width = stringWidth(label, "Helvetica", 7.5)
+        label_width = stringWidth(label, "Helvetica", contact_size)
         c.linkURL(url, (contact_x, contact_y - 2, contact_x + label_width, contact_y + 8), relative=0, thickness=0)
         contact_x += label_width
 
