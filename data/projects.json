@@ -14,18 +14,6 @@
       "fork": false
     },
     {
-      "name": "Sakhya",
-      "description": null,
-      "html_url": "https://github.com/devganatra/Sakhya",
-      "homepage": null,
-      "language": "Swift",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "topics": [],
-      "updated_at": "2026-07-29T14:37:06Z",
-      "fork": false
-    },
-    {
       "name": "TestGithbActions",
       "description": "tryGITHUBACTIONS",
       "html_url": "https://github.com/devganatra/TestGithbActions",
