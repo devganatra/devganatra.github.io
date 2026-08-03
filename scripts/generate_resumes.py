@@ -29,11 +29,11 @@ CONTENT = {
         ),
         "skills_title": "CAPABILITIES",
         "skills": [
-            "Technical product ownership",
-            "Stakeholder and backlog alignment",
+            "Product ownership for sustaining products",
+            "Stakeholder, backlog and delivery alignment",
             "Embedded C / C++ and microcontrollers",
             "MATLAB / Simulink and control systems",
-            "Python, C# / .NET, Qt and CI",
+            "Software architecture, integration and CI",
             "CAN, AUTOSAR and validation",
         ],
         "education_title": "EDUCATION & CREDENTIALS",
@@ -41,10 +41,11 @@ CONTENT = {
             ("2013 - 2018", "M.Sc. Embedded Systems Engineering", "University of Freiburg | Grade 1.8"),
             ("2008 - 2012", "B.E. Electronics Engineering", "RTM Nagpur University"),
             ("2025", "SAFe Hardware Agilist", "Scaled Agile | SAFe 6"),
+            ("CERTIFIED", "iSAQB Software Architecture", "Certified Professional for Software Architecture"),
         ],
         "experience_title": "EXPERIENCE",
         "experience": [
-            ("CURRENT", "Technical Product Owner", "Vaillant Group | Remscheid", "Current assignment within Innovation HW/SW, connecting product priorities, stakeholder needs, system constraints, and embedded engineering delivery."),
+            ("CURRENT", "Technical Product Owner - Sustaining Project", "Vaillant Group | Remscheid", "Product ownership for sustaining work: aligning stakeholders, prioritising the backlog, managing HW/SW dependencies, and connecting delivery decisions with system constraints and validation."),
             ("2022 - NOW", "Innovation HW/SW Specialist", "Vaillant Group | Remscheid", "Embedded and model-based development, software integration, continuous integration, and engineering-tool development."),
             ("2019 - 2021", "Embedded Software Development Engineer", "Bertrandt Ingenieurbuero | Cologne", "Embedded and model-based software, AUTOSAR applications, diagnostics, Qt interfaces, validation, and automated workflows."),
             ("2018", "Research Associate", "University of Freiburg | IMTEK", "Electrochemical sensing protocols, experimental design, data workflows, and evaluation for neural-interface research."),
@@ -63,11 +64,11 @@ CONTENT = {
         ),
         "skills_title": "KOMPETENZEN",
         "skills": [
-            "Technical Product Ownership",
-            "Stakeholder- und Backlog-Abstimmung",
+            "Product Ownership für Sustaining-Produkte",
+            "Stakeholder-, Backlog- und Lieferabstimmung",
             "Embedded C / C++ und Mikrocontroller",
             "MATLAB / Simulink und Regelungstechnik",
-            "Python, C# / .NET, Qt und CI",
+            "Softwarearchitektur, Integration und CI",
             "CAN, AUTOSAR und Validierung",
         ],
         "education_title": "AUSBILDUNG & ZERTIFIKATE",
@@ -75,10 +76,11 @@ CONTENT = {
             ("2013 - 2018", "M.Sc. Embedded Systems Engineering", "Universität Freiburg | Note 1,8"),
             ("2008 - 2012", "B.E. Electronics Engineering", "RTM Nagpur University"),
             ("2025", "SAFe Hardware Agilist", "Scaled Agile | SAFe 6"),
+            ("ZERT.", "iSAQB Software Architecture", "Certified Professional for Software Architecture"),
         ],
         "experience_title": "BERUFSERFAHRUNG",
         "experience": [
-            ("AKTUELL", "Technical Product Owner", "Vaillant Group | Remscheid", "Aktuelle Aufgabe im Bereich Innovation HW/SW: Verbindung von Produktprioritäten, Stakeholder-Bedarf, Systemgrenzen und Embedded-Engineering-Umsetzung."),
+            ("AKTUELL", "Technical Product Owner - Sustaining-Projekt", "Vaillant Group | Remscheid", "Product Ownership für Sustaining-Arbeit: Stakeholder ausrichten, Backlog priorisieren, HW/SW-Abhängigkeiten steuern und Lieferentscheidungen mit Systemgrenzen und Validierung verbinden."),
             ("2022 - HEUTE", "Innovation HW/SW Specialist", "Vaillant Group | Remscheid", "Embedded- und modellbasierte Entwicklung, Softwareintegration, Continuous Integration und Entwicklung interner Engineering-Tools."),
             ("2019 - 2021", "Embedded-Softwareentwickler", "Bertrandt Ingenieurbüro | Köln", "Embedded- und modellbasierte Software, AUTOSAR-Anwendungen, Diagnose, Qt-Oberflächen, Validierung und automatisierte Workflows."),
             ("2018", "Wissenschaftlicher Mitarbeiter", "Universität Freiburg | IMTEK", "Elektrochemische Sensorprotokolle, Versuchsplanung, Daten-Workflows und Auswertung für die Forschung an neuronalen Schnittstellen."),
@@ -150,8 +152,24 @@ def build_resume(language):
     c.setFillColor(HexColor("#BBC5CB"))
     c.setFont("Helvetica-Bold", 8)
     c.drawString(43, height - 73, data["role"])
+    contact_y = height - 100
+    contact_x = 43
     c.setFont("Helvetica", 7.5)
-    c.drawString(43, height - 100, "ganatra.dev@gmail.com  |  devganatra.github.io  |  linkedin.com/in/devganatra  |  github.com/devganatra")
+    contact_items = [
+        ("ganatra.dev@gmail.com", "mailto:ganatra.dev@gmail.com"),
+        ("devganatra.github.io", "https://devganatra.github.io/"),
+        ("linkedin.com/in/devganatra", "https://www.linkedin.com/in/devganatra"),
+        ("github.com/devganatra", "https://github.com/devganatra"),
+    ]
+    for index, (label, url) in enumerate(contact_items):
+        if index:
+            separator = "  |  "
+            c.drawString(contact_x, contact_y, separator)
+            contact_x += stringWidth(separator, "Helvetica", 7.5)
+        c.drawString(contact_x, contact_y, label)
+        label_width = stringWidth(label, "Helvetica", 7.5)
+        c.linkURL(url, (contact_x, contact_y - 2, contact_x + label_width, contact_y + 8), relative=0, thickness=0)
+        contact_x += label_width
 
     margin = 42
     gutter = 32
@@ -200,7 +218,7 @@ def build_resume(language):
     c.setFillColor(MUTED)
     c.setFont("Helvetica", 6.8)
     c.drawString(margin, 16, "Selected experience and capabilities | Full project portfolio: devganatra.github.io")
-    c.drawRightString(width - margin, 16, "Updated July 2026")
+    c.drawRightString(width - margin, 16, "Updated August 2026")
     c.save()
     return path
 

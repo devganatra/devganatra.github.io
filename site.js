@@ -54,8 +54,8 @@ const applyLanguage = (language, persist = false) => {
 
   document.querySelectorAll("[data-resume-link]").forEach((link) => {
     link.setAttribute("href", selected === "de"
-      ? "/output/pdf/Dev_Ganatra_Resume_DE.pdf"
-      : "/output/pdf/Dev_Ganatra_Resume_EN.pdf");
+      ? "/output/pdf/Dev_Ganatra_Resume_DE.pdf?v=2026-08"
+      : "/output/pdf/Dev_Ganatra_Resume_EN.pdf?v=2026-08");
   });
 
   updateInternalLinks(selected);
