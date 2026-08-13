@@ -36,6 +36,10 @@ const applyLanguage = (language, persist = false) => {
     element.textContent = element.dataset[selected];
   });
 
+  document.querySelectorAll("[data-aria-en][data-aria-de]").forEach((element) => {
+    element.setAttribute("aria-label", element.dataset[selected === "de" ? "ariaDe" : "ariaEn"]);
+  });
+
   const title = root.dataset[`title${selected === "de" ? "De" : "En"}`];
   const description = root.dataset[`description${selected === "de" ? "De" : "En"}`];
   if (title) document.title = title;

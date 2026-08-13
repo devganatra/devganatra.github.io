@@ -693,6 +693,13 @@ html[lang="de"] .page-hero h1 {
   .signal-card { padding: 24px; }
 }
 
+@media (min-width: 1051px) and (max-width: 1120px) {
+  .header-inner { gap: 16px; }
+  .primary-nav { gap: 16px; }
+  .primary-nav a { font-size: 11px; }
+  .linkedin-link { display: none; }
+}
+
 @media (max-width: 1050px) {
   :root { --shell: min(100% - 44px, 920px); }
   .header-inner { grid-template-columns: 120px 1fr auto; gap: 16px; }
@@ -718,7 +725,7 @@ html[lang="de"] .page-hero h1 {
   .publication-feature { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 840px) {
   :root { --shell: calc(100% - 30px); }
   body { background-size: 42px 42px; }
   .header-inner { grid-template-columns: 1fr auto; min-height: 68px; }
