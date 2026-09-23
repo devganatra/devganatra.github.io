@@ -1,4 +1,4 @@
-const CACHE_NAME = "dev-portfolio-v51";
+const CACHE_NAME = "dev-portfolio-v52";
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -14,7 +14,7 @@ const CORE_ASSETS = [
   "/notes/product-ownership-embedded-systems/",
   "/notes/engineering-depth-product-clarity/",
   "/notes/feedback-delivery-system/",
-  "/styles.css?v=51",
+  "/styles.css?v=52",
   "/site.js?v=50",
   "/assets/og.png",
   "/assets/icon.svg",

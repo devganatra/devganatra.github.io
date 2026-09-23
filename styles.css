@@ -252,6 +252,14 @@ html[lang="de"] .page-hero h1 {
   font-size: clamp(17px, 1.5vw, 21px);
   line-height: 1.65;
 }
+@media (min-width: 841px) {
+  :root[data-theme="light"] .hero-intro {
+    text-shadow:
+      0 0 5px rgba(240, 239, 233, 1),
+      0 0 13px rgba(240, 239, 233, 0.98),
+      0 0 22px rgba(240, 239, 233, 0.9);
+  }
+}
 .hero-actions,
 .page-actions {
   display: flex;
@@ -432,11 +440,6 @@ html[lang="de"] .page-hero h1 {
     contrast(0.98)
     brightness(1.06);
 }
-:root[data-theme="light"] .portrait-card {
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.08) 10%, rgba(0, 0, 0, 0.62) 26%, #000 42%);
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.08) 10%, rgba(0, 0, 0, 0.62) 26%, #000 42%);
-}
-
 .proof-strip { border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg-deep) 72%, transparent); }
 .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
 .proof-grid > div { min-width: 0; padding: 24px 26px; border-left: 1px solid var(--line); }
@@ -896,8 +899,7 @@ html[lang="de"] .section-heading h2 {
     overflow-wrap: anywhere;
   }
   .signal-card { width: 100%; min-width: 0; }
-  .portrait-card,
-  :root[data-theme="light"] .portrait-card {
+  .portrait-card {
     position: relative;
     inset: auto;
     width: 100vw;
