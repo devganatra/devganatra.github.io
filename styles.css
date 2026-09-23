@@ -404,7 +404,7 @@ html[lang="de"] .page-hero h1 {
   top: 0;
   right: calc((var(--shell) - 100vw) / 2);
   bottom: 0;
-  width: min(64vw, 920px);
+  width: min(72vw, 1040px);
   min-height: 0;
   overflow: hidden;
   border: 0;
@@ -420,7 +420,7 @@ html[lang="de"] .page-hero h1 {
   max-width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 38% center;
+  object-position: 42% center;
   filter:
     saturate(0.88)
     contrast(1.04)
@@ -431,6 +431,10 @@ html[lang="de"] .page-hero h1 {
     saturate(0.82)
     contrast(0.98)
     brightness(1.06);
+}
+:root[data-theme="light"] .portrait-card {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.08) 10%, rgba(0, 0, 0, 0.62) 26%, #000 42%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.08) 10%, rgba(0, 0, 0, 0.62) 26%, #000 42%);
 }
 
 .proof-strip { border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg-deep) 72%, transparent); }
@@ -892,7 +896,8 @@ html[lang="de"] .section-heading h2 {
     overflow-wrap: anywhere;
   }
   .signal-card { width: 100%; min-width: 0; }
-  .portrait-card {
+  .portrait-card,
+  :root[data-theme="light"] .portrait-card {
     position: relative;
     inset: auto;
     width: 100vw;
