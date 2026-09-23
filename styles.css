@@ -782,6 +782,8 @@ html[lang="de"] .section-heading h2 {
 .project-card-footer { display: flex; justify-content: space-between; gap: 18px; align-items: end; padding-top: 16px; border-top: 1px solid var(--line); }
 .project-card-footer span { max-width: 70%; color: var(--soft); font: 400 10px/1.5 var(--mono); }
 .project-card-footer a { color: var(--lime); font: 500 10px var(--mono); }
+.project-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 14px; text-align: right; }
+.archive-note { max-width: 760px; margin: 26px 0 0; padding-left: 16px; border-left: 2px solid var(--lime); color: var(--soft); font: 400 12px/1.65 var(--mono); }
 
 .publication-feature {
   display: grid;
@@ -989,6 +991,9 @@ html[lang="de"] .section-heading h2 {
   .evidence-strip { grid-template-columns: 1fr; }
   .project-toolbar { align-items: flex-start; flex-direction: column; }
   .project-card { min-height: 310px; }
+  .project-card-footer { align-items: flex-start; flex-direction: column; }
+  .project-card-footer span { max-width: 100%; }
+  .project-links { justify-content: flex-start; text-align: left; }
   .publication-feature { padding: 24px; }
   .research-timeline article { grid-template-columns: 90px 1fr; }
   .research-timeline strong { grid-column: 2; }
