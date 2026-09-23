@@ -253,6 +253,11 @@ html[lang="de"] .page-hero h1 {
   line-height: 1.65;
 }
 @media (min-width: 841px) {
+  :root[data-theme="light"] .portrait-card {
+    -webkit-mask-image: none;
+    mask-image: none;
+    clip-path: polygon(18% 0, 100% 0, 100% 100%, 28% 100%);
+  }
   :root[data-theme="light"] .hero-intro {
     text-shadow:
       0 0 5px rgba(240, 239, 233, 1),
