@@ -472,6 +472,7 @@ html[lang="de"] .page-hero h1 {
 .proof-grid > div:last-child { border-right: 1px solid var(--line); }
 .proof-grid span { color: var(--lime); font: 500 9px var(--mono); }
 .proof-grid strong { display: block; margin: 12px 0 6px; font: 500 16px/1.2 var(--display); }
+.proof-grid strong a:hover { color: var(--lime); }
 .proof-grid small { color: var(--muted); font: 400 9px/1.45 var(--mono); text-transform: uppercase; }
 
 .section { padding-block: 110px; border-bottom: 1px solid var(--line); }
@@ -776,6 +777,7 @@ html[lang="de"] .section-heading h2 {
   border: 1px solid var(--line);
   background: var(--panel);
 }
+.project-card-featured { border-color: var(--line-strong); background: linear-gradient(145deg, var(--panel), rgba(115, 137, 39, 0.16)); }
 .project-card-top { display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font: 400 10px var(--mono); }
 .project-card h2 { margin: auto 0 14px; font: 500 30px/1.05 var(--display); letter-spacing: -0.03em; }
 .project-card p { margin: 0 0 24px; color: var(--muted); line-height: 1.6; }

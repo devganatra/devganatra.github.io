@@ -1,4 +1,4 @@
-const CACHE_NAME = "dev-portfolio-v56";
+const CACHE_NAME = "dev-portfolio-v57";
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -14,8 +14,8 @@ const CORE_ASSETS = [
   "/notes/product-ownership-embedded-systems/",
   "/notes/engineering-depth-product-clarity/",
   "/notes/feedback-delivery-system/",
-  "/styles.css?v=56",
-  "/site.js?v=56",
+  "/styles.css?v=57",
+  "/site.js?v=57",
   "/assets/og.png",
   "/assets/icon.svg",
   "/assets/dev-ganatra-hero-scene.jpg",
