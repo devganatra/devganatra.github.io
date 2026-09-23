@@ -254,17 +254,36 @@ html[lang="de"] .page-hero h1 {
 }
 @media (min-width: 841px) {
   :root[data-theme="light"] .hero-copy {
-    width: min(42%, 540px);
+    width: min(46%, 570px);
   }
   :root[data-theme="light"] .portrait-card {
-    width: 56vw;
+    width: min(72vw, 1040px);
     -webkit-mask-image: none;
     mask-image: none;
     clip-path: none;
-    border-left: 1px solid var(--line);
+    border-left: 0;
   }
   :root[data-theme="light"] .portrait-card img {
-    object-position: 60% center;
+    object-position: 42% center;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.12) 8%, rgba(0, 0, 0, 0.78) 22%, #000 34%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.12) 8%, rgba(0, 0, 0, 0.78) 22%, #000 34%);
+  }
+  :root[data-theme="light"] .portrait-card::after {
+    position: absolute;
+    inset: 0;
+    background: url("/assets/dev-ganatra-hero-scene.jpg") 42% center / cover no-repeat;
+    filter: saturate(0.82) contrast(0.98) brightness(1.06);
+    -webkit-mask-image: linear-gradient(to right, transparent 20%, rgba(0, 0, 0, 0.18) 24%, rgba(0, 0, 0, 0.82) 30%, #000 36%);
+    mask-image: linear-gradient(to right, transparent 20%, rgba(0, 0, 0, 0.18) 24%, rgba(0, 0, 0, 0.82) 30%, #000 36%);
+    content: "";
+    pointer-events: none;
+  }
+  :root[data-theme="light"] .hero-intro {
+    max-width: 520px;
+    text-shadow:
+      0 0 5px rgba(240, 239, 233, 1),
+      0 0 14px rgba(240, 239, 233, 1),
+      0 0 24px rgba(240, 239, 233, 0.94);
   }
 }
 .hero-actions,
