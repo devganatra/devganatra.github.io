@@ -17,6 +17,27 @@ const initialLanguage = ["en", "de"].includes(languageFromQuery)
   ? languageFromQuery
   : (["en", "de"].includes(storedLanguage) ? storedLanguage : browserLanguage);
 
+// Keep the global navigation focused on the four top-level destinations.
+// The detailed project and research routes remain reachable from Work.
+document.querySelectorAll([
+  '.primary-nav a[href^="/product/"]',
+  '.primary-nav a[href^="/projects/"]',
+  '.primary-nav a[href^="/research/"]',
+].join(", ")).forEach((link) => link.remove());
+
+document.querySelectorAll('.primary-nav a[href="/case-studies/"]').forEach((link) => {
+  link.dataset.en = "Work";
+  link.dataset.de = "Arbeiten";
+});
+document.querySelectorAll('.primary-nav a[href="/notes/"]').forEach((link) => {
+  link.dataset.en = "Ideas";
+  link.dataset.de = "Fachbeiträge";
+});
+document.querySelectorAll('.primary-nav a[href="/experience/"]').forEach((link) => {
+  link.dataset.en = "Experience";
+  link.dataset.de = "Werdegang";
+});
+
 const updateInternalLinks = (language) => {
   document.querySelectorAll("a[data-internal]").forEach((link) => {
     const original = link.dataset.baseHref || link.getAttribute("href");
