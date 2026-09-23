@@ -77,6 +77,20 @@ const applyLanguage = (language, persist = false) => {
     button.setAttribute("aria-pressed", String(button.dataset.language === selected));
   });
 
+  document.querySelector("[data-primary-navigation]")?.setAttribute("aria-label", selected === "de" ? "Hauptnavigation" : "Primary navigation");
+  document.querySelectorAll(".language-switch").forEach((switcher) => {
+    switcher.setAttribute("aria-label", selected === "de" ? "Sprache" : "Language");
+  });
+  document.querySelectorAll(".site-footer nav").forEach((navigation) => {
+    navigation.setAttribute("aria-label", selected === "de" ? "Weiterführende Links" : "Additional links");
+  });
+  document.querySelectorAll("[data-theme-toggle]").forEach((toggle) => {
+    const usingLight = root.dataset.theme === "light";
+    toggle.setAttribute("title", selected === "de"
+      ? (usingLight ? "Dunkles Farbschema verwenden" : "Helles Farbschema verwenden")
+      : (usingLight ? "Use dark theme" : "Use light theme"));
+  });
+
   document.querySelectorAll("[data-resume-link]").forEach((link) => {
     link.setAttribute("href", selected === "de"
       ? "/output/pdf/Dev_Ganatra_Resume_DE.pdf?v=2026-08-overleaf"
@@ -122,7 +136,9 @@ const applyTheme = (theme, persist = false) => {
   root.dataset.theme = selected;
   themeToggles.forEach((toggle) => {
     toggle.setAttribute("aria-pressed", String(selected === "light"));
-    toggle.setAttribute("title", selected === "light" ? "Use dark theme" : "Use light theme");
+    toggle.setAttribute("title", root.lang === "de"
+      ? (selected === "light" ? "Dunkles Farbschema verwenden" : "Helles Farbschema verwenden")
+      : (selected === "light" ? "Use dark theme" : "Use light theme"));
   });
   if (persist) safeStorage.set(themeKey, selected);
 };
@@ -146,8 +162,17 @@ primaryNavigation?.querySelectorAll("a").forEach((link) => link.addEventListener
 document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeMenu(); });
 
 const page = body.dataset.page;
-document.querySelectorAll("[data-nav-page]").forEach((link) => {
-  if (link.dataset.navPage === page) link.setAttribute("aria-current", "page");
+const navigationPage = ["product", "projects", "research"].includes(page) ? "cases" : page;
+const navigationTargets = {
+  "/": "home",
+  "/case-studies/": "cases",
+  "/experience/": "experience",
+  "/notes/": "notes",
+};
+primaryNavigation?.querySelectorAll("a").forEach((link) => {
+  const pathname = new URL(link.dataset.baseHref || link.getAttribute("href"), window.location.origin).pathname;
+  const target = link.dataset.navPage || navigationTargets[pathname];
+  if (target === navigationPage) link.setAttribute("aria-current", "page");
 });
 
 const revealObserver = "IntersectionObserver" in window

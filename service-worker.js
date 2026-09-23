@@ -1,16 +1,24 @@
-const CACHE_NAME = "dev-portfolio-v43";
+const CACHE_NAME = "dev-portfolio-v46";
 const CORE_ASSETS = [
   "/",
   "/index.html",
   "/product/",
   "/case-studies/",
+  "/case-studies/connected-climate-products/",
+  "/case-studies/engineering-tools/",
+  "/case-studies/neural-implant-sensing/",
   "/projects/",
   "/research/",
   "/experience/",
   "/notes/",
-  "/styles.css?v=43",
-  "/site.js?v=43",
+  "/notes/product-ownership-embedded-systems/",
+  "/notes/engineering-depth-product-clarity/",
+  "/notes/feedback-delivery-system/",
+  "/styles.css?v=46",
+  "/site.js?v=46",
   "/assets/og.png",
+  "/assets/icon.svg",
+  "/assets/dev-ganatra-portrait.jpg",
   "/manifest.webmanifest",
   "/robots.txt",
   "/sitemap.xml",
@@ -29,9 +37,12 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET" || new URL(event.request.url).origin !== self.location.origin) return;
+  const requestUrl = new URL(event.request.url);
   event.respondWith(fetch(event.request).then((response) => {
     const copy = response.clone();
     caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
     return response;
-  }).catch(() => caches.match(event.request).then((cached) => cached || caches.match("/index.html"))));
+  }).catch(() => caches.match(event.request, { ignoreSearch: true }).then((cached) => cached
+    || caches.match(requestUrl.pathname)
+    || caches.match("/index.html"))));
 });
