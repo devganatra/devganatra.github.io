@@ -253,16 +253,18 @@ html[lang="de"] .page-hero h1 {
   line-height: 1.65;
 }
 @media (min-width: 841px) {
+  :root[data-theme="light"] .hero-copy {
+    width: min(42%, 540px);
+  }
   :root[data-theme="light"] .portrait-card {
+    width: 56vw;
     -webkit-mask-image: none;
     mask-image: none;
-    clip-path: polygon(18% 0, 100% 0, 100% 100%, 28% 100%);
+    clip-path: none;
+    border-left: 1px solid var(--line);
   }
-  :root[data-theme="light"] .hero-intro {
-    text-shadow:
-      0 0 5px rgba(240, 239, 233, 1),
-      0 0 13px rgba(240, 239, 233, 0.98),
-      0 0 22px rgba(240, 239, 233, 0.9);
+  :root[data-theme="light"] .portrait-card img {
+    object-position: 60% center;
   }
 }
 .hero-actions,
